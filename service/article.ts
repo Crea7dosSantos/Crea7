@@ -11,7 +11,7 @@ export const getArticles = async () => (
 
 export const getArticleById = async (id) => (
     await fetch(
-        `https://c7ds-log.microcms.io/api/v1/articles${id}`,
+        `https://c7ds-log.microcms.io/api/v1/articles/${id}`,
         key
     )
 )
