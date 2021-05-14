@@ -1,9 +1,7 @@
-import Head from "next/head"
-import Image from "next/image"
-import React from "react"
-import { getArticles } from "../../service/article"
-import styles from '../styles/Home.module.css'
+import Image from 'next/image'
+import React from 'react'
 import Link from 'next/link'
+import { getArticles } from '../service/article'
 
 export default function Home({ articles }) {
   return (
@@ -12,8 +10,9 @@ export default function Home({ articles }) {
       <div>
         {articles.map(article => (
           <React.Fragment key={article.id}>
-            <Link href="/articles/[id]" as={`articles/${article.id}`}>
+            <Link href='/articles/[:id]' as={`/articles/${article.id}`}>
               <a>
+                {/* <Image src={article.topImage.url} width={400} height={200} /> */}
                 <h2>{article.title}</h2>
               </a>
             </Link>

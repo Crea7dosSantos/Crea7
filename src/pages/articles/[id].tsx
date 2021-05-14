@@ -1,11 +1,11 @@
-import { getArticles, getArticleById } from "../../../service/article"
+import { getArticles, getArticleById } from '../../service/article'
 
 export default function articleDetail({ article }) {
     return (
         <div>
             <h1>{article.title}</h1>
             <div>
-                <p>記事作成日時: {article.created_at}</p>
+                <p>記事作成日時: {article.createdAt}</p>
                 <p>{article.body}</p>
             </div>
         </div>
@@ -25,6 +25,8 @@ export const getStaticProps = async contents => {
 
     const res = await getArticleById(id)
     const article = await res.json()
+
+    console.log(article.topImage)
 
     return {
         props: {
