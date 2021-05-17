@@ -12,7 +12,7 @@ export default function Home({ articles }) {
           <React.Fragment key={article.id}>
             <Link href='/articles/[:id]' as={`/articles/${article.id}`}>
               <a>
-                {/* <Image src={article.topImage.url} width={400} height={200} /> */}
+                <img src={article.topImage.url} alt="" width={200} height={100} />
                 <h2>{article.title}</h2>
               </a>
             </Link>
