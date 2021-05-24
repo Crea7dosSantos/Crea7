@@ -6,6 +6,7 @@ export default function articleDetail({ article }) {
       <h1>{article.title}</h1>
       <div>
         <p>記事作成日時: {article.createdAt}</p>
+
         <div dangerouslySetInnerHTML={{ __html: `${article.body}` }}></div>
       </div>
     </div>
@@ -28,7 +29,7 @@ export const getStaticProps = async (contents) => {
 
   return {
     props: {
-      article: article
-    }
+      article: article,
+    },
   }
 }

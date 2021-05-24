@@ -6,18 +6,13 @@ import { getArticles } from '../service/article'
 export default function Home({ articles }) {
   return (
     <div>
-      <h2 className="text-7xl text-red-500 font-bold">最新の記事</h2>
+      <h2 className="text-7xl text-red-500 font-bold">最新の記事はこれ</h2>
       <div>
         {articles.map((article) => (
           <React.Fragment key={article.id}>
             <Link href="/articles/[:id]" as={`/articles/${article.id}`}>
               <a>
-                <img
-                  src={article.topImage.url}
-                  alt=""
-                  width={200}
-                  height={100}
-                />
+                <img src={article.topImage.url} alt="" width={200} height={100} />
                 <h2>{article.title}</h2>
               </a>
             </Link>
@@ -39,8 +34,8 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      articles: data.contents
-    }
+      articles: data.contents,
+    },
   }
 }
 
