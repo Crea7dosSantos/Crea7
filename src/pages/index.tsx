@@ -6,7 +6,7 @@ import { getArticles } from '../service/article'
 export default function Home({ articles }) {
   return (
     <div>
-      <h2 className="text-7xl text-red-500 font-bold">最新の記事</h2>
+      <h2 className="text-7xl text-red-500 font-bold">最新の記事はこれ</h2>
       <div>
         {articles.map((article) => (
           <React.Fragment key={article.id}>
