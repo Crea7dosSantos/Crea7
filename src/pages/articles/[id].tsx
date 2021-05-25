@@ -28,7 +28,7 @@ export const getStaticProps = async (contents) => {
 
   return {
     props: {
-      article: article
-    }
+      article: article,
+    },
   }
 }
