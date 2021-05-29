@@ -1,6 +1,12 @@
+import { NextPage } from 'next'
 import { getArticles, getArticleById } from '../../service/article'
+import { Article } from '../../types/article'
 
-export default function articleDetail({ article }) {
+type Props = {
+  article: Article
+}
+
+const ArticlePage: NextPage<Props> = ({ article }) => {
   return (
     <div>
       <h1>{article.title}</h1>
@@ -32,3 +38,5 @@ export const getStaticProps = async (contents) => {
     },
   }
 }
+
+export default ArticlePage
