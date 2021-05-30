@@ -1,9 +1,15 @@
 // import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
+import { NextPage } from 'next'
 import { getArticles } from '../service/article'
+import { Article } from '../types/article'
 
-export default function Home({ articles }) {
+type Props = {
+  articles: Article[]
+}
+
+const Home: NextPage<Props> = ({ articles }) => {
   return (
     <div>
       <h2 className="text-7xl text-red-500 font-bold">最新の記事はこれ</h2>
@@ -39,19 +45,4 @@ export const getStaticProps = async () => {
   }
 }
 
-{
-  /* <div class="max-w-sm rounded overflow-hidden shadow-lg">
-  <img class="w-full" src={article.topImage.url} alt="Sunset in the mountains"/>
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-    <p class="text-gray-700 text-base">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-    </p>
-  </div>
-  <div class="px-6 py-4">
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#photography</span>
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#travel</span>
-    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#winter</span>
-  </div>
-</div> */
-}
+export default Home
