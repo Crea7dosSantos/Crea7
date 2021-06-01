@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { NextPage } from 'next'
 import { getArticles } from '../service/article'
 import { Article } from '../types/article'
+import Image from 'next/image'
 
 type Props = {
   articles: Article[]
@@ -17,7 +18,13 @@ const Home: NextPage<Props> = ({ articles }) => {
           <React.Fragment key={article.id}>
             <Link href="/articles/[:id]" as={`/articles/${article.id}`}>
               <a>
-                <img src={article.topImage.url} alt="" width={200} height={100} />
+                <Image
+                  alt="Mountains"
+                  src="/mountains.jpg"
+                  width={300}
+                  height={300}
+                  quality={100}
+                />
                 <h2>{article.title}</h2>
               </a>
             </Link>
