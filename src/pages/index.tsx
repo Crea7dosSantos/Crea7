@@ -4,6 +4,7 @@ import { NextPage } from 'next'
 import { getArticles } from '../service/article'
 import { Article } from '../types/article'
 import Image from 'next/image'
+import Layout from '../pages/layout'
 
 type Props = {
   articles: Article[]
@@ -11,7 +12,7 @@ type Props = {
 
 const Home: NextPage<Props> = ({ articles }) => {
   return (
-    <div>
+    <Layout>
       <h2 className="text-7xl text-red-500 font-bold">最新の記事はこれ</h2>
       <div>
         {articles.map((article) => (
@@ -36,7 +37,7 @@ const Home: NextPage<Props> = ({ articles }) => {
           </React.Fragment>
         ))}
       </div>
-    </div>
+    </Layout>
   )
 }
 
