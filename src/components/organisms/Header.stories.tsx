@@ -1,10 +1,16 @@
-// import React from 'react'
-// import { Story, Meta } from '@storybook/react'
+import React from 'react'
+import { Story, Meta } from '@storybook/react'
 
-// // export default {
-// //   title: 'Organisms/Header',
-// //   component: ,
-// //   argTypes: {
-// //     backgroundColor: { control: 'color' },
-// //   },
-// } as Meta
+import { Header } from './Header'
+
+export default {
+  title: 'Organisms/Header',
+  component: Header,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as Meta
+
+const Template: Story = (args) => <Header {...args} />
+
+export const Normal = Template.bind({})
