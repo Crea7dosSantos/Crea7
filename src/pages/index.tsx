@@ -13,7 +13,7 @@ type Props = {
 const Home: NextPage<Props> = ({ articles }) => {
   return (
     <Layout>
-      <h2 className="text-7xl text-red-500 font-bold">最新の記事はこれ</h2>
+      <h2 className="py-12 text-4xl font-normal">TECH BLOG</h2>
       <div>
         {articles.map((article) => (
           <React.Fragment key={article.id}>
