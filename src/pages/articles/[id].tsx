@@ -1,6 +1,7 @@
 import { NextPage } from 'next'
 import { getArticles, getArticleById } from '../../service/article'
 import { Article } from '../../types/article'
+import Layout from '../layout'
 
 type Props = {
   article: Article
@@ -8,13 +9,13 @@ type Props = {
 
 const ArticlePage: NextPage<Props> = ({ article }) => {
   return (
-    <div>
-      <h1>{article.title}</h1>
+    <Layout>
+      <h1 className="py-12 text-4xl font-normal">{article.title}</h1>
       <div>
         <p>記事作成日時: {article.createdAt}</p>
         <div dangerouslySetInnerHTML={{ __html: `${article.body}` }}></div>
       </div>
-    </div>
+    </Layout>
   )
 }
 
