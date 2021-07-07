@@ -14,7 +14,7 @@ const Home: NextPage<Props> = ({ articles }) => {
   return (
     <Layout>
       <h2 className="py-12 text-4xl font-normal">TECH BLOG</h2>
-      <div>
+      <div className="md:grid md:grid-flow-col md:grid-cols-2 md:gap-8 lg:gap-20">
         {articles.map((article) => (
           <React.Fragment key={article.id}>
             <Link href="/articles/[:id]" as={`/articles/${article.id}`}>
@@ -22,8 +22,9 @@ const Home: NextPage<Props> = ({ articles }) => {
                 <Image
                   alt="Mountains"
                   src="/mountains.jpg"
-                  width={300}
-                  height={300}
+                  width={700}
+                  height={450}
+                  layout={'intrinsic'}
                   quality={100}
                 />
                 <h2>{article.title}</h2>
