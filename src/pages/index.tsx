@@ -14,7 +14,7 @@ const Home: NextPage<Props> = ({ articles }) => {
   return (
     <Layout>
       <h2 className="py-12 text-4xl font-normal">TECH BLOG</h2>
-      <div className="md:grid md:grid-flow-col md:grid-cols-2 md:gap-8 lg:gap-20">
+      <div className="md:grid md:grid-cols-2 md:gap-8 lg:gap-16">
         {articles.map((article) => (
           <React.Fragment key={article.id}>
             <Link href="/articles/[:id]" as={`/articles/${article.id}`}>
