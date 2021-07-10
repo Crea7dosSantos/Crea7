@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { ArticleCardList, ArticleCardListProps } from './ArticleCardList'
-import { ArticleMock } from '../molecules/ArticleCard.stories'
+import * as ArticleCardStories from '../molecules/ArticleCard.stories'
 
 export default {
   title: 'Organisms/ArticleCardList',
@@ -16,8 +16,8 @@ const Template: Story<ArticleCardListProps> = (args) => <ArticleCardList {...arg
 export const Normal = Template.bind({})
 Normal.args = {
   articles: [
-    { ...ArticleMock, id: '1', title: 'タイトル1だよ' },
-    { ...ArticleMock, id: '2', title: 'タイトル2だよ' },
+    { ...ArticleCardStories.Normal.args.article, id: '1', title: 'タイトル1だよ' },
+    { ...ArticleCardStories.Normal.args.article, id: '2', title: 'タイトル2だよ' },
   ],
 }
 
