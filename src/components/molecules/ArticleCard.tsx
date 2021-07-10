@@ -5,7 +5,6 @@ import { Article } from '../../types/article'
 
 export interface ArticleCardProps {
   article: Article
-  onClick?: () => void
 }
 
 export const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
