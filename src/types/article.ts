@@ -6,7 +6,7 @@ export type Article = {
   title: string
   body: string
   topImage: TopImage
-  tags: [Tag]
+  tags: Tag[]
   createdAt: string
   updatedAt: string
   publishedAt: string
