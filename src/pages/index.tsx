@@ -1,4 +1,3 @@
-import React from 'react'
 import { NextPage } from 'next'
 import { getArticles } from '../service/article'
 import { Article } from '../types/article'
