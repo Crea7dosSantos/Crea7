@@ -8,7 +8,7 @@ export interface ArticleCardProps {
   article: Article
 }
 
-export const ArticleCard: React.FC<ArticleCardProps> = ({ article }) => {
+export const ArticleCard: React.VFC<ArticleCardProps> = ({ article }) => {
   return (
     <React.Fragment key={article.id}>
       <div>

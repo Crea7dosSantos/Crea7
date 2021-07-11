@@ -2,7 +2,7 @@ import React from 'react'
 import { LogoImage } from '../atoms/LogoImage'
 import Link from 'next/link'
 
-export const Logo: React.FC = () => {
+export const Logo: React.VFC = () => {
   return (
     <Link href="/" as={`/index`}>
       <a className="flex items-center m-auto">
