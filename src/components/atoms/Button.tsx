@@ -8,7 +8,7 @@ export interface ButtonProps {
   onClick?: () => void
 }
 
-export const Button: React.FC<ButtonProps> = ({
+export const Button: React.VFC<ButtonProps> = ({
   primary = false,
   size = 'medium',
   backgroundColor,

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
 import { Logo } from './Logo'
@@ -9,6 +8,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [(story) => <div style={{ backgroundColor: 'black' }}>{story()}</div>],
 } as Meta
 
 const Template: Story = (args) => <Logo {...args} />

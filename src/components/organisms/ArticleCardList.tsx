@@ -6,7 +6,7 @@ export interface ArticleCardListProps {
   articles: Article[]
 }
 
-export const ArticleCardList: React.FC<ArticleCardListProps> = ({ articles }) => {
+export const ArticleCardList: React.VFC<ArticleCardListProps> = ({ articles }) => {
   if (articles.length <= 1) {
     return (
       <div>

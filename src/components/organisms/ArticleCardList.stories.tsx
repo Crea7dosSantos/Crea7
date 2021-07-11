@@ -1,4 +1,3 @@
-import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { ArticleCardList, ArticleCardListProps } from './ArticleCardList'
 import * as ArticleCardStories from '../molecules/ArticleCard.stories'
