@@ -1,7 +1,7 @@
+import Layout from '../pages/layout'
 import { NextPage } from 'next'
 import { getArticles } from '../service/article'
 import { Article } from '../types/article'
-import Layout from '../pages/layout'
 import { ArticleCardList } from '../components/organisms/ArticleCardList'
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 const Home: NextPage<Props> = ({ articles }) => {
   return (
     <Layout>
-      <h2 className="py-12 text-4xl font-normal">TECH BLOG</h2>
+      <h2 className="py-11 font-normal text-4xl text-center md:text-left">TECH BLOG</h2>
       <ArticleCardList articles={articles} />
     </Layout>
   )
