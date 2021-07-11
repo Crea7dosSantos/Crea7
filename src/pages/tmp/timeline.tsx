@@ -6,7 +6,7 @@ const TimelinePage: NextPage = () => {
     <section>
       <div className={`text-white py-8 ${styles.custom_background_color}`}>
         <div className="container mx-auto flex flex-col items-start lg:flex-row my-12 lg:my-24">
-          <div className="flex flex-col w-full sticky lg:top-36 lg:w-1/3 mt-2 lg:mt-12 px-8">
+          <div className="flex flex-col w-full sticky lg:top-36 lg:w-1/3 mt-2 lg:mt-8 px-8">
             <p className={`ml-2 ${styles.custom_text_color} uppercase tracking-loose`}>
               Working Process
             </p>
