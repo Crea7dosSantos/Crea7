@@ -4,9 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        blue: {
-          450: '#1ea7fd',
-        },
+        'regal-light-gray': 'rgba(214, 226, 243, 0.7)',
+        'regal-dark-gray': 'rgba(115, 125, 130, 0.4)',
+        'regal-light-black': 'rgba(61, 73, 79, 0.4)',
+        'regal-dark-black': '#1c1c1f',
       },
     },
     fontFamily: {
