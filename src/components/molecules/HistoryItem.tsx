@@ -19,7 +19,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
           <div className="mb-3 flex items-center">
             <Image
               alt="icon"
-              src={hostname === 'zenn.dev' ? '/zenn-favicon.png' : 'favicon.ico'}
+              src={hostname === 'zenn.dev' ? '/zenn-favicon.png' : '/qiita-favicon.png'}
               width={14}
               height={14}
               quality={100}
@@ -65,9 +65,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
               Posted on {hostname} / 2 months ago
             </p>
           </div>
-          <h4 className="mb-3 font-semibold text-lg lg:text-2xl">
-            stale-while-revalidate対応のCDNでISRと同じような挙動を実現する
-          </h4>
+          <h4 className="mb-3 font-semibold text-lg lg:text-2xl">{history.title}</h4>
         </div>
       </div>
     </React.Fragment>
