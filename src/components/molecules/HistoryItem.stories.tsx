@@ -24,12 +24,12 @@ export default {
 
 const Template: Story<HistoryItemProps> = (args) => <HistoryItem {...args} />
 
-export const Normal = Template.bind({})
-Normal.args = {
+export const Left = Template.bind({})
+Left.args = {
   history: {
     id: '1',
     title: 'stale-while-revalidate対応のCDNでISRと同じような挙動を実現する',
-    url: 'https://google.com',
+    url: 'https://zenn.dev/catnose99/articles/08cf9e475004b2',
     topImage: {
       url: '',
       height: 400,
@@ -40,4 +40,14 @@ Normal.args = {
     updatedAt: '',
     publishedAt: '',
   },
+  position: 'left',
+}
+
+export const Right = Template.bind({})
+Right.args = {
+  history: {
+    ...Left.args.history,
+    url: 'https://qiita.com/',
+  },
+  position: 'right',
 }
