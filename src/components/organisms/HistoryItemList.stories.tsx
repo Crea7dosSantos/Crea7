@@ -24,12 +24,38 @@ const Template: Story<HistoryItemListProps> = (args) => <HistoryItemList {...arg
 export const Normal = Template.bind({})
 Normal.args = {
   historys: [
-    { ...HistoryItemStories.Left.args.history },
-    { ...HistoryItemStories.Right.args.history },
-    { ...HistoryItemStories.Left.args.history },
-    { ...HistoryItemStories.Right.args.history },
-    { ...HistoryItemStories.Left.args.history },
-    { ...HistoryItemStories.Right.args.history },
+    {
+      ...HistoryItemStories.Left.args.history,
+      id: '1',
+      title: 'Lerna + viteで他パッケージの依存関係をうまく解決できないときの確認ポイント',
+    },
+    {
+      ...HistoryItemStories.Right.args.history,
+      id: '2',
+      title: 'Notion APIのLimit（リクエスト制限）で気になったことまとめ',
+    },
+    {
+      ...HistoryItemStories.Left.args.history,
+      id: '3',
+      title: 'GAEのデプロイでquotas were exceededエラーが発生したときの対処法',
+      url: 'https://c7ds-log.microcms.io/api/v1',
+    },
+    {
+      ...HistoryItemStories.Right.args.history,
+      id: '4',
+      title: 'GAEのデプロイでquotas were exceededエラーが発生したときの対処法',
+    },
+    {
+      ...HistoryItemStories.Left.args.history,
+      id: '5',
+      title:
+        '【React】特定の要素が画面内 / 画面より上 / 画面より下のどこにあるかを調べるカスタムフック',
+    },
+    {
+      ...HistoryItemStories.Right.args.history,
+      id: '6',
+      title: 'Next.jsアプリをVercelからGCPに移行した話',
+    },
   ],
 }
 
