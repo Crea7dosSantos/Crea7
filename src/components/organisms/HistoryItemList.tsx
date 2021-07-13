@@ -3,11 +3,11 @@ import { HistoryItem } from '../molecules/HistoryItem'
 import { History } from '../../types/history'
 
 export interface HistoryItemListProps {
-  historys: History[]
+  histories: History[]
 }
 
-export const HistoryItemList: React.VFC<HistoryItemListProps> = ({ historys }) => {
-  if (historys.length <= 1) {
+export const HistoryItemList: React.VFC<HistoryItemListProps> = ({ histories }) => {
+  if (histories.length <= 1) {
     return (
       <div>
         <div className="title-message">You have no tasks</div>
@@ -22,7 +22,7 @@ export const HistoryItemList: React.VFC<HistoryItemListProps> = ({ historys }) =
         <div className="relative wrap overflow-hidden p-3 h-full">
           <div className="container">
             <div className="flex flex-col md:grid grid-cols-9 mx-auto p-2 ">
-              {historys.map((history, index) => (
+              {histories.map((history, index) => (
                 <HistoryItem
                   key={history.id}
                   history={history}

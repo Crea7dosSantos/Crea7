@@ -36,7 +36,7 @@ Left.args = {
       width: 400,
     },
     tags: [],
-    createdAt: '',
+    createdAt: '2021-07-08T07:13:40.445Z',
     updatedAt: '',
     publishedAt: '',
   },
