@@ -6,7 +6,7 @@ const TimelinePage: NextPage = () => {
       <div className="text-white py-8 bg-regal-dark-black">
         <div className="container mx-auto flex flex-col items-start lg:flex-row my-12 lg:my-24">
           <div className="flex flex-col w-full sticky lg:top-36 lg:w-1/3 mt-2 lg:mt-8 px-8">
-            <p className="ml-2 text-regal-light-gray uppercase tracking-loose">Working Process</p>
+            <p className="ml-2 text-regal-light-gray uppercase tracking-loose">Life Process</p>
             <p className="text-3xl lg:text-4xl leading-normal lg:leading-relaxed mb-2">
               Crea7 timeline
             </p>
@@ -16,7 +16,7 @@ const TimelinePage: NextPage = () => {
             </p>
             <a
               href="#"
-              className={`bg-transparent mr-auto hover:bg-regal-dark-gray text-regal-light-gray hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border hover:border-transparent`}
+              className="bg-transparent mr-auto hover:bg-regal-dark-gray text-regal-light-gray hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border hover:border-transparent"
             >
               Explore Now
             </a>
@@ -41,9 +41,7 @@ const TimelinePage: NextPage = () => {
                         <div className="h-full w-3 flex items-center justify-center">
                           <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
                         </div>
-                        <div
-                          className={`w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow`}
-                        ></div>
+                        <div className="w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow"></div>
                       </div>
                     </div>
                     {/* right */}
@@ -52,9 +50,7 @@ const TimelinePage: NextPage = () => {
                         <div className="h-full w-3 flex items-center justify-center">
                           <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
                         </div>
-                        <div
-                          className={`w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow`}
-                        ></div>
+                        <div className="w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow"></div>
                       </div>
                       <div className="col-start-6 col-end-10 rounded-xl my-4 mr-auto shadow-md">
                         <p className="mb-3 text-base text-regal-light-gray">
@@ -79,9 +75,7 @@ const TimelinePage: NextPage = () => {
                         <div className="h-full w-3 flex items-center justify-center">
                           <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
                         </div>
-                        <div
-                          className={`w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow`}
-                        ></div>
+                        <div className="w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow"></div>
                       </div>
                     </div>
                     {/* right */}
@@ -90,9 +84,7 @@ const TimelinePage: NextPage = () => {
                         <div className="h-full w-3 flex items-center justify-center">
                           <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
                         </div>
-                        <div
-                          className={`w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow`}
-                        ></div>
+                        <div className="w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow"></div>
                       </div>
                       <div className="col-start-6 col-end-10 rounded-xl my-4 mr-auto shadow-md">
                         <p className="mb-3 text-base text-regal-light-gray">
