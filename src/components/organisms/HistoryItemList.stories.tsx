@@ -23,7 +23,7 @@ const Template: Story<HistoryItemListProps> = (args) => <HistoryItemList {...arg
 
 export const Normal = Template.bind({})
 Normal.args = {
-  historys: [
+  histories: [
     {
       ...HistoryItemStories.Left.args.history,
       id: '1',
@@ -61,5 +61,5 @@ Normal.args = {
 
 export const Empty = Template.bind({})
 Empty.args = {
-  historys: [],
+  histories: [],
 }
