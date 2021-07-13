@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getHostFromURL, getHostIconFromURL } from '../../lib/helper'
+import { getHostFromURL, getHostIconFromURL, formatDate } from '../../lib/helper'
 import { History } from '../../types/history'
+import { TagItem } from './TagItem'
 
 export interface HistoryItemProps {
   history: History
@@ -15,10 +16,10 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
     <React.Fragment key={history.id}>
       {/* left */}
       <div className="flex flex-row-reverse md:contents">
-        <Link href="">
-          <a className="flex md:contents">
-            <div className="col-start-1 col-end-5 rounded-xl my-4 ml-auto shadow-md">
-              <div className="mb-3 flex items-center">
+        <div className="col-start-1 col-end-5 rounded-xl my-4 ml-auto shadow-md">
+          <Link href="">
+            <a>
+              <div className="mb-1.5 flex items-center">
                 <Image
                   alt="icon"
                   src={getHostIconFromURL(history.url)}
@@ -27,22 +28,31 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
                   quality={100}
                 />
                 <p className="ml-2 text-base text-regal-light-gray">
-                  Posted on {hostname} / 2 months ago
+                  Posted on {hostname} / {formatDate(history.createdAt)}
                 </p>
               </div>
-              <h4 className="mb-3 font-semibold text-lg lg:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-dark-gray">
+            </a>
+          </Link>
+          <Link href="">
+            <a className="inline-block mb-1.5">
+              <h4 className="font-semibold text-lg lg:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-dark-gray">
                 {history.title}
               </h4>
-            </div>
-          </a>
-        </Link>
+            </a>
+          </Link>
+          <div>
+            {history.tags.map((tag) => (
+              <React.Fragment key={tag.id}>
+                <TagItem tag={tag} />
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
         <div className="col-start-5 col-end-6 md:mx-auto relative mr-6">
           <div className="h-full w-3 flex items-center justify-center">
             <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
           </div>
-          <div
-            className={`w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow`}
-          ></div>
+          <div className="w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow"></div>
         </div>
       </div>
     </React.Fragment>
@@ -50,18 +60,16 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
     <React.Fragment key={history.id}>
       {/* right */}
       <div className="flex md:contents">
-        <Link href="">
-          <a className="flex md:contents">
-            <div className="col-start-5 col-end-6 mr-6 md:mx-auto relative">
-              <div className="h-full w-3 flex items-center justify-center">
-                <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
-              </div>
-              <div
-                className={`w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow`}
-              ></div>
-            </div>
-            <div className="col-start-6 col-end-10 rounded-xl my-4 mr-auto shadow-md">
-              <div className="mb-3 flex items-center">
+        <div className="col-start-5 col-end-6 mr-6 md:mx-auto relative">
+          <div className="h-full w-3 flex items-center justify-center">
+            <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
+          </div>
+          <div className="w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow"></div>
+        </div>
+        <div className="col-start-6 col-end-10 rounded-xl my-4 mr-auto shadow-md">
+          <Link href="">
+            <a>
+              <div className="mb-1.5 flex items-center">
                 <Image
                   alt="icon"
                   src={getHostIconFromURL(history.url)}
@@ -70,15 +78,26 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
                   quality={100}
                 />
                 <p className="ml-2 text-base text-regal-light-gray">
-                  Posted on {hostname} / 2 months ago
+                  Posted on {hostname} / {formatDate(history.createdAt)}
                 </p>
               </div>
-              <h4 className="mb-3 font-semibold text-lg lg:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-dark-gray">
+            </a>
+          </Link>
+          <Link href="">
+            <a className="inline-block mb-1.5">
+              <h4 className="font-semibold text-lg lg:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-dark-gray">
                 {history.title}
               </h4>
-            </div>
-          </a>
-        </Link>
+            </a>
+          </Link>
+          <div>
+            {history.tags.map((tag) => (
+              <React.Fragment key={tag.id}>
+                <TagItem tag={tag} />
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
       </div>
     </React.Fragment>
   )

@@ -35,8 +35,17 @@ Left.args = {
       height: 400,
       width: 400,
     },
-    tags: [],
-    createdAt: '',
+    tags: [
+      {
+        id: '1',
+        name: 'walk',
+      },
+      {
+        id: '2',
+        name: 'forest',
+      },
+    ],
+    createdAt: '2021-07-08T07:13:40.445Z',
     updatedAt: '',
     publishedAt: '',
   },
