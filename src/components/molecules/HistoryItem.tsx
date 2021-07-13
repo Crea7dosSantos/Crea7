@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getHostFromURL, getHostIconFromURL } from '../../lib/helper'
+import { getHostFromURL, getHostIconFromURL, formatDate } from '../../lib/helper'
 import { History } from '../../types/history'
 
 export interface HistoryItemProps {
@@ -27,7 +27,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
                   quality={100}
                 />
                 <p className="ml-2 text-base text-regal-light-gray">
-                  Posted on {hostname} / 2 months ago
+                  Posted on {hostname} / {formatDate(history.createdAt)}
                 </p>
               </div>
               <h4 className="mb-3 font-semibold text-lg lg:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-dark-gray">
@@ -70,7 +70,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
                   quality={100}
                 />
                 <p className="ml-2 text-base text-regal-light-gray">
-                  Posted on {hostname} / 2 months ago
+                  Posted on {hostname} / {formatDate(history.createdAt)}
                 </p>
               </div>
               <h4 className="mb-3 font-semibold text-lg lg:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-dark-gray">
