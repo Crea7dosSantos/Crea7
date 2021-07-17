@@ -49,10 +49,14 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
           </div>
         </div>
         <div className="col-start-5 col-end-6 md:mx-auto relative mr-6">
-          <div className="h-full w-3 flex items-center justify-center">
-            <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
-          </div>
-          <div className="w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow"></div>
+          <Link href="">
+            <a>
+              <div className="h-full w-3 flex items-center justify-center">
+                <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
+              </div>
+              <div className="w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow"></div>
+            </a>
+          </Link>
         </div>
       </div>
     </React.Fragment>
@@ -61,10 +65,14 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
       {/* right */}
       <div className="flex md:contents">
         <div className="col-start-5 col-end-6 mr-6 md:mx-auto relative">
-          <div className="h-full w-3 flex items-center justify-center">
-            <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
-          </div>
-          <div className="w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow"></div>
+          <Link href="">
+            <a>
+              <div className="h-full w-3 flex items-center justify-center">
+                <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
+              </div>
+              <div className="w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow"></div>
+            </a>
+          </Link>
         </div>
         <div className="col-start-6 col-end-10 rounded-xl my-4 mr-auto shadow-md">
           <Link href="">

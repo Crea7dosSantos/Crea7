@@ -1,36 +1,35 @@
-import Layout from '../pages/layout'
 import { NextPage } from 'next'
-import { getArticles } from '../service/article'
-import { Article } from '../types/article'
-import { ArticleCardList } from '../components/organisms/ArticleCardList'
-import Link from 'next/link'
+import { Profile } from '../components/organisms/Profile'
+import { HistoryItemList } from '../components/organisms/HistoryItemList'
+import { History } from '../types/history'
+import { getHistories } from '../service/history'
 
 type Props = {
-  articles: Article[]
+  histories: History[]
 }
 
-const Home: NextPage<Props> = ({ articles }) => {
+const Timeline: NextPage<Props> = ({ histories }) => {
   return (
-    <Layout>
-      <h2 className="py-11 font-normal text-4xl text-center md:text-left">TECH BLOG</h2>
-      <ArticleCardList articles={articles} />
-      <br />
-      <Link href="/tmp/timeline">
-        <a>Timeline</a>
-      </Link>
-    </Layout>
+    <section>
+      <div className="text-white py-8 bg-regal-dark-black">
+        <div className="container mx-auto flex flex-col items-start lg:flex-row my-12 lg:my-24">
+          <Profile />
+          <HistoryItemList histories={histories} />
+        </div>
+      </div>
+    </section>
   )
 }
 
 export const getStaticProps = async () => {
-  const res = await getArticles()
+  const res = await getHistories()
   const data = await res.json()
 
   return {
     props: {
-      articles: data.contents,
+      histories: data.contents,
     },
   }
 }
 
-export default Home
+export default Timeline
