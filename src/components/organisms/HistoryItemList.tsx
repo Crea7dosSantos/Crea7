@@ -7,11 +7,19 @@ export interface HistoryItemListProps {
 }
 
 export const HistoryItemList: React.VFC<HistoryItemListProps> = ({ histories }) => {
-  if (histories.length <= 1) {
+  if (histories.length < 1) {
     return (
-      <div>
-        <div className="title-message">You have no tasks</div>
-        <div className="subtitle-message">Sit back and relax</div>
+      <div className="ml-0 lg:ml-12 lg:w-2/3 sticky">
+        <div className="container mx-auto w-full h-full">
+          <div className="relative wrap overflow-hidden p-3 h-full">
+            <div className="container">
+              <div className="flex flex-col md:grid grid-cols-9 mx-auto p-2 ">
+                <div className="title-message">You have no tasks</div>
+                <div className="subtitle-message">Sit back and relax</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
