@@ -11,9 +11,9 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
   return (
     <Layout>
       <h1 className="py-12 text-4xl font-normal">{article.title}</h1>
-      <div>
+      <div className="py-8 bg-regal-dark-black">
         <p>記事作成日時: {article.createdAt}</p>
-        <div dangerouslySetInnerHTML={{ __html: `${article.body}` }}></div>
+        <div className="article" dangerouslySetInnerHTML={{ __html: `${article.body}` }}></div>
       </div>
     </Layout>
   )
