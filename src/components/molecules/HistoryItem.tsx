@@ -17,7 +17,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
       {/* left */}
       <div className="flex flex-row-reverse md:contents">
         <div className="col-start-1 col-end-5 rounded-xl my-4 ml-auto shadow-md">
-          <Link href="">
+          <Link href={history.url}>
             <a>
               <div className="mb-1.5 flex items-center">
                 <Image
@@ -33,7 +33,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
               </div>
             </a>
           </Link>
-          <Link href="">
+          <Link href={history.url}>
             <a className="inline-block mb-1.5">
               <h4 className="font-semibold text-lg lg:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-dark-gray">
                 {history.title}
@@ -49,7 +49,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
           </div>
         </div>
         <div className="col-start-5 col-end-6 md:mx-auto relative mr-6">
-          <Link href="">
+          <Link href={history.url}>
             <a>
               <div className="h-full w-3 flex items-center justify-center">
                 <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
@@ -65,7 +65,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
       {/* right */}
       <div className="flex md:contents">
         <div className="col-start-5 col-end-6 mr-6 md:mx-auto relative">
-          <Link href="">
+          <Link href={history.url}>
             <a>
               <div className="h-full w-3 flex items-center justify-center">
                 <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
@@ -75,7 +75,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
           </Link>
         </div>
         <div className="col-start-6 col-end-10 rounded-xl my-4 mr-auto shadow-md">
-          <Link href="">
+          <Link href={history.url}>
             <a>
               <div className="mb-1.5 flex items-center">
                 <Image
@@ -91,7 +91,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
               </div>
             </a>
           </Link>
-          <Link href="">
+          <Link href={history.url}>
             <a className="inline-block mb-1.5">
               <h4 className="font-semibold text-lg lg:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-dark-gray">
                 {history.title}
