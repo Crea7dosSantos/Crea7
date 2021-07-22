@@ -43,7 +43,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
           <div>
             {history.tags.map((tag) => (
               <React.Fragment key={tag.id}>
-                <TagItem tag={tag} />
+                <TagItem tag={tag} backgroundColor="gray" fullRounded />
               </React.Fragment>
             ))}
           </div>
@@ -101,7 +101,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
           <div>
             {history.tags.map((tag) => (
               <React.Fragment key={tag.id}>
-                <TagItem tag={tag} />
+                <TagItem tag={tag} backgroundColor="gray" fullRounded />
               </React.Fragment>
             ))}
           </div>
