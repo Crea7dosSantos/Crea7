@@ -1,15 +1,17 @@
 import React from 'react'
 import Moment from 'react-moment'
 import { NextPage } from 'next'
-import { getArticles, getArticleById } from '../../service/article'
+import { fetchArticles, fetchArticleById } from '../../service/article'
 import { Article } from '../../types/article'
 import { TagItem } from '../../components/molecules/TagItem'
+import { Tag } from '../../types/tag'
 
 type Props = {
   article: Article
+  tags: Tag[]
 }
 
-const ArticlePage: NextPage<Props> = ({ article }) => {
+const ArticlePage: NextPage<Props> = ({ article, tags }) => {
   return (
     <div className="bg-regal-dark-black text-white">
       <div className="m-auto w-12/11 sm:w-11/12 md:w-10/12 lg:w-11/12 xl:w-9/12 py-12">
@@ -84,17 +86,13 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
             </div>
           </div>
           <div className="col-start-5 col-end-7 sticky">
-            <p className="bg-gray-800 sticky p-5">
-              quia, minus dolor praesentium officia maxime deserunt porro amet ab debitis deleniti
-              modi soluta similique...Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Tempora reiciendis ad architecto at aut placeat quia, minus dolor praesentium officia
-              maxime deserunt porro amet ab debitis deleniti modi soluta similique...Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Tempora reiciendis ad architecto at aut
-              placeat quia, minus dolor praesentium officia maxime deserunt porro amet ab debitis
-              deleniti modi soluta similique...Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor praesentium
-              officia maxime deserunt porro amet ab debitis deleniti modi soluta similique...Lorem
-              ipsum
+            <h3 className="text-2xl mb-2">Tags</h3>
+            <p className="">
+              {tags.map((tag) => (
+                <React.Fragment key={tag.id}>
+                  <TagItem tag={tag} backgroundColor="gray" fullRounded={false} />
+                </React.Fragment>
+              ))}
             </p>
           </div>
         </div>
@@ -104,7 +102,7 @@ const ArticlePage: NextPage<Props> = ({ article }) => {
 }
 
 export const getStaticPaths = async () => {
-  const res = await getArticles()
+  const res = await fetchArticles()
   const repos = await res.json()
 
   const paths = repos.contents.map((repo) => `/articles/${repo.id}`)
@@ -113,13 +111,15 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (contents) => {
   const id = contents.params.id
+  const res = await fetchArticleById(id)
 
-  const res = await getArticleById(id)
-  const article = await res.json()
+  const article = await res[0].json()
+  const tags = await res[1].json()
 
   return {
     props: {
       article: article,
+      tags: tags.contents,
     },
   }
 }
