@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 import { Profile } from '../components/organisms/Profile'
 import { HistoryItemList } from '../components/organisms/HistoryItemList'
 import { History } from '../types/history'
-import { getHistories } from '../service/history'
+import { fetchHistories } from '../service/history'
 
 type Props = {
   histories: History[]
@@ -22,7 +22,7 @@ const Timeline: NextPage<Props> = ({ histories }) => {
 }
 
 export const getStaticProps = async () => {
-  const res = await getHistories()
+  const res = await fetchHistories()
   const data = await res.json()
 
   return {
