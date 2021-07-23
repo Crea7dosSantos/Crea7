@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import { Profile } from '../components/organisms/Profile'
+import { TopProfile } from '../components/organisms/TopProfile'
 import { HistoryItemList } from '../components/organisms/HistoryItemList'
 import { History } from '../types/history'
 import { fetchHistories } from '../service/history'
@@ -13,7 +13,7 @@ const Timeline: NextPage<Props> = ({ histories }) => {
     <section>
       <div className="text-white py-8 bg-regal-dark-black">
         <div className="container mx-auto flex flex-col items-start lg:flex-row my-12 lg:my-24">
-          <Profile />
+          <TopProfile />
           <HistoryItemList histories={histories} />
         </div>
       </div>

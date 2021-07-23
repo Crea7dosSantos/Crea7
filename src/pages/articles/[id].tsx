@@ -5,6 +5,7 @@ import { fetchArticles, fetchArticleById } from '../../service/article'
 import { Article } from '../../types/article'
 import { TagItem } from '../../components/molecules/TagItem'
 import { Tag } from '../../types/tag'
+import { Profile } from '../../components/organisms/Profile'
 
 type Props = {
   article: Article
@@ -86,6 +87,7 @@ const ArticlePage: NextPage<Props> = ({ article, tags }) => {
             </div>
           </div>
           <div className="col-start-5 col-end-7 sticky">
+            <Profile />
             <h3 className="text-2xl mb-2">Tags</h3>
             <p className="">
               {tags.map((tag) => (
