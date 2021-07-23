@@ -1,5 +1,10 @@
 import React from 'react'
-import Image from 'next/image'
+import { ZennIcon } from '../atoms/ZennIcon'
+import { TwitterIcon } from '../atoms/TwitterIcon'
+import { GithubIcon } from '../../../GithubIcon'
+import { QiitaIcon } from '../../../QiitaIcon'
+import { EMailIcon } from '../atoms/EMailIcon'
+import { MediumIcon } from '../atoms/MediumIcon'
 
 export const Profile: React.VFC = () => {
   return (
@@ -29,26 +34,39 @@ export const Profile: React.VFC = () => {
           </div>
           <p className="text-gray-400">Crazy Like ODB、Play Like 勝新</p>
           <div className="pt-2 flex text-sm text-gray-400">
-            <a href="" className="flex-1 inline-flex items-center hover:text-blue-100">
-              <Image alt="icon" src="/github-favicon.png" width={14} height={14} quality={100} />
+            <a
+              href="https://github.com/Crea7dosSantos"
+              className="flex-1 inline-flex items-center hover:text-blue-100"
+            >
+              <GithubIcon width={16} height={16} />
               <p className="ml-2">Github</p>
             </a>
-            <a href="" className="flex-1 inline-flex items-center hover:text-blue-100">
-              <Image alt="icon" src="/twitter-favicon.png" width={14} height={14} quality={100} />
+            <a
+              href="https://qiita.com/Crea7"
+              className="flex-1 inline-flex items-center hover:text-blue-100"
+            >
+              <QiitaIcon width={16} height={16} />
+              <p className="ml-2">Qiita</p>
+            </a>
+            <a href="" className="flex-shrink inline-flex items-center hover:text-blue-100">
+              <MediumIcon width={16} height={16} />
+              <p className="ml-2">Medium</p>
+            </a>
+          </div>
+          <div className="flex pt-1 text-sm text-gray-400">
+            <a
+              href="https://twitter.com/Crea7dosSantos"
+              className="flex-1 inline-flex items-center hover:text-blue-100"
+            >
+              <TwitterIcon width={16} height={16} />
               <p className="ml-2">Twitter</p>
             </a>
             <a href="" className="flex-1 inline-flex items-center hover:text-blue-100">
-              <Image alt="icon" src="/qiita-favicon.png" width={14} height={14} quality={100} />
-              <p className="ml-2">Qiita</p>
-            </a>
-          </div>
-          <div className="flex pt-0.5 text-sm text-gray-400">
-            <a href="" className="flex-1 inline-flex items-center hover:text-blue-100">
-              <Image alt="icon" src="/zenn-favicon.png" width={14} height={14} quality={100} />
+              <ZennIcon width={16} height={16} />
               <p className="ml-2">Zenn</p>
             </a>
-            <a href="" className="flex-1 inline-flex items-center hover:text-blue-100">
-              <Image alt="icon" src="/email-favicon.png" width={14} height={14} quality={100} />
+            <a href="" className="flex-shrinkG inline-flex items-center hover:text-blue-100">
+              <EMailIcon width={16} height={16} />
               <p className="ml-2">E-mail</p>
             </a>
           </div>
