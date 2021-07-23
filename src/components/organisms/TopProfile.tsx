@@ -9,7 +9,10 @@ export const TopProfile: React.VFC = () => {
       <p className="text-sm lg:text-base text-regal-light-gray mb-4">
         web/iOS application developer. This is my history. <br />
         Follow{' '}
-        <a href="https://twitter.com/crea7_3tos" className="pb-0.5 border-b border-regal-dark-gray">
+        <a
+          href="https://twitter.com/crea7_3tos"
+          className="pb-0.5 border-b border-regal-dark-gray hover:text-blue-100"
+        >
           @crea7_3tos <TwitterIcon width={18} height={18} />
         </a>{' '}
         for daily updates.

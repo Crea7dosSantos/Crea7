@@ -88,7 +88,7 @@ const ArticlePage: NextPage<Props> = ({ article, tags }) => {
           </div>
           <div className="col-start-5 col-end-7 sticky">
             <Profile />
-            <h3 className="text-2xl mb-2">Tags</h3>
+            <h3 className="text-2xl mb-2 mt-5">Tags</h3>
             <p className="">
               {tags.map((tag) => (
                 <React.Fragment key={tag.id}>
