@@ -15,9 +15,7 @@ export const TagItem: React.VFC<TagItemProps> = ({ tag, backgroundColor, fullRou
         <a
           className={`inline-block ${
             backgroundColor === 'gray' ? 'bg-regal-dark-gray' : 'bg-black'
-          } ${
-            fullRounded ? 'rounded-full' : 'rounded'
-          } py-1 px-2 mr-2 mt-1.5 text-xs lowercase text-white`}
+          } ${fullRounded ? 'rounded-full' : 'rounded'} py-1 px-2 mr-2 mt-1.5 text-xs text-white`}
           href="#"
         >
           {tag.name}
