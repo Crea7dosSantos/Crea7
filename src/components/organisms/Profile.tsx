@@ -1,8 +1,8 @@
 import React from 'react'
 import { ZennIcon } from '../atoms/ZennIcon'
 import { TwitterIcon } from '../atoms/TwitterIcon'
-import { GithubIcon } from '../../../GithubIcon'
-import { QiitaIcon } from '../../../QiitaIcon'
+import { GithubIcon } from '../atoms/GithubIcon'
+import { QiitaIcon } from '../atoms/QiitaIcon'
 import { EMailIcon } from '../atoms/EMailIcon'
 import { MediumIcon } from '../atoms/MediumIcon'
 
