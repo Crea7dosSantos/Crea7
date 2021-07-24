@@ -1,9 +1,9 @@
 import React from 'react'
 import { NextPage } from 'next'
 import { Tag } from '../types/tag'
-import { TagItem } from '../components/molecules/TagItem'
 import { Profile } from '../components/organisms/Profile'
 import { Header } from '../components/organisms/Header'
+import { Footer } from '../components/organisms/Footer'
 
 type Props = {
   tags: Tag[]
@@ -21,16 +21,9 @@ const Layout: NextPage<Props> = ({ children, tags }) => {
               <Profile />
             </div>
           </div>
-          <h3 className="text-2xl mb-2 mt-5 text-center">Tags</h3>
-          <div>
-            {tags.map((tag) => (
-              <React.Fragment key={tag.id}>
-                <TagItem tag={tag} backgroundColor="gray" fullRounded={false} />
-              </React.Fragment>
-            ))}
-          </div>
         </div>
       </div>
+      <Footer tags={tags} />
     </div>
   )
 }
