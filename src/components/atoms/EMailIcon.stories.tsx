@@ -7,7 +7,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [(story) => <div className="text-white bg-regal-dark-black">{story()}</div>],
+  decorators: [(story) => <div className="text-white bg-regal-weight-black">{story()}</div>],
 } as Meta
 
 const Template: Story<EMailIconProps> = (args) => <EMailIcon {...args} />

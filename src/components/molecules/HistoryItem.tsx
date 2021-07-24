@@ -35,7 +35,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
           </Link>
           <Link href={history.url}>
             <a className="inline-block mb-1.5">
-              <h4 className="font-semibold text-lg lg:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-dark-gray">
+              <h4 className="font-semibold text-lg lg:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-weight-gray">
                 {history.title}
               </h4>
             </a>
@@ -54,7 +54,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
               <div className="h-full w-3 flex items-center justify-center">
                 <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
               </div>
-              <div className="w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow"></div>
+              <div className="w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-weight-black border-solid border-2 border-regal-weight-gray shadow"></div>
             </a>
           </Link>
         </div>
@@ -70,7 +70,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
               <div className="h-full w-3 flex items-center justify-center">
                 <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
               </div>
-              <div className="w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-dark-black border-solid border-2 border-regal-dark-gray shadow"></div>
+              <div className="w-3 h-3 absolute top-1/2 -mt-3 rounded-full bg-regal-weight-black border-solid border-2 border-regal-weight-gray shadow"></div>
             </a>
           </Link>
         </div>
@@ -93,7 +93,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
           </Link>
           <Link href={history.url}>
             <a className="inline-block mb-1.5">
-              <h4 className="font-semibold text-lg lg:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-dark-gray">
+              <h4 className="font-semibold text-lg lg:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-weight-gray">
                 {history.title}
               </h4>
             </a>
