@@ -15,20 +15,20 @@ const Layout: NextPage<Props> = ({ children, tags }) => {
       <Header />
       <div className="bg-black text-white">
         <div className="m-auto w-12/11 sm:w-11/12 md:w-10/12 lg:w-11/12 xl:w-9/12 py-12">
-          <div className="lg:grid lg:grid-cols-6 lg:gap-10">
-            <div className="col-start-1 col-span-4">{children}</div>
-            <div className="col-start-5 col-end-7">
+          <div className="flex flex-col items-start lg:flex-row">
+            <div className="w-full lg:w-2/3">{children}</div>
+            <div className="w-full lg:w-1/3 ml-0 lg:ml-12 sticky lg:top-10 mt-5 lg:mt-0">
               <Profile />
             </div>
           </div>
           <h3 className="text-2xl mb-2 mt-5 text-center">Tags</h3>
-          <p className="">
+          <div>
             {tags.map((tag) => (
               <React.Fragment key={tag.id}>
                 <TagItem tag={tag} backgroundColor="gray" fullRounded={false} />
               </React.Fragment>
             ))}
-          </p>
+          </div>
         </div>
       </div>
     </div>
