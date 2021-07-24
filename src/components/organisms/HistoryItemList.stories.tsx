@@ -10,7 +10,7 @@ export default {
   },
   decorators: [
     (story) => (
-      <div className="text-white py-8 bg-regal-dark-black">
+      <div className="text-white py-8 bg-regal-weight-black">
         <div className="container mx-auto flex flex-col items-start lg:flex-row my-12 lg:my-24">
           {story()}
         </div>

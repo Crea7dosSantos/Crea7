@@ -7,7 +7,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [(story) => <div className="bg-regal-dark-black">{story()} </div>],
+  decorators: [(story) => <div className="bg-regal-weight-black">{story()} </div>],
 } as Meta<TagItemProps>
 
 const Template: Story<TagItemProps> = (args) => <TagItem {...args} />
