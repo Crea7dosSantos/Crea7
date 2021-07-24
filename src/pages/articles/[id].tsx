@@ -23,7 +23,7 @@ const ArticlePage: NextPage<Props> = ({ article, tags }) => {
             className="w-full h-56 sm:h-64 md:h-72 lg:h-96 sm:rounded-lg sm:rounded-b-none"
           />
         </div>
-        <div className="py-7 px-10">
+        <div className="py-7 px-5 sm:px-10">
           <p className="text-gray-300">
             <Moment format="YYYY.MM.DD">{article.createdAt}</Moment>
           </p>
