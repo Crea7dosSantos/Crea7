@@ -10,6 +10,8 @@ module.exports = {
         'regal-middle-black': '#1d1d1f',
         'regal-weight-black': '#1c1c1f',
         'regal-header-black': 'rgba(0, 0, 0, 0.91)',
+        'regal-footer-black': '#111',
+        'regal-footer-light-gray': '#6e6e73',
       },
     },
     fontFamily: {
