@@ -7,7 +7,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [(story) => <div className="text-white py-8 bg-regal-dark-black">{story()}</div>],
+  decorators: [(story) => <div className="text-white py-8 bg-regal-weight-black">{story()}</div>],
 } as Meta
 
 const Template: Story = (args) => <TopProfile {...args} />

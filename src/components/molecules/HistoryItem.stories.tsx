@@ -9,7 +9,7 @@ export default {
   },
   decorators: [
     (story) => (
-      <div className="ml-0 lg:ml-12 lg:w-2/3 sticky bg-regal-dark-black text-white">
+      <div className="ml-0 lg:ml-12 lg:w-2/3 sticky bg-regal-weight-black text-white">
         <div className="container mx-auto w-full h-full">
           <div className="relative wrap overflow-hidden p-3 h-full">
             <div className="container">

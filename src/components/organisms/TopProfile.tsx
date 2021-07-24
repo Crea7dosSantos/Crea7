@@ -11,7 +11,7 @@ export const TopProfile: React.VFC = () => {
         Follow{' '}
         <a
           href="https://twitter.com/crea7_3tos"
-          className="pb-0.5 border-b border-regal-dark-gray hover:text-blue-100"
+          className="pb-0.5 border-b border-regal-weight-gray hover:text-blue-100"
         >
           @crea7_3tos <TwitterIcon width={18} height={18} />
         </a>{' '}
@@ -19,7 +19,7 @@ export const TopProfile: React.VFC = () => {
       </p>
       <a
         href="#"
-        className="bg-transparent mr-auto hover:bg-regal-dark-gray text-regal-light-gray hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border hover:border-transparent"
+        className="bg-transparent mr-auto hover:bg-regal-weight-gray text-regal-light-gray hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border hover:border-transparent"
       >
         Explore Now
       </a>

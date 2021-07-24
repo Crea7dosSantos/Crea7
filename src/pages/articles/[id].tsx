@@ -20,7 +20,7 @@ const ArticlePage: NextPage<Props> = ({ article, tags }) => {
           <img
             src="https://ik.imagekit.io/q5edmtudmz/post1_fOFO9VDzENE.jpg"
             alt="mountains"
-            className="w-full h-56 sm:h-64 md:h-72 lg:h-96 rounded-lg rounded-b-none"
+            className="w-full h-56 sm:h-64 md:h-72 lg:h-96 sm:rounded-lg sm:rounded-b-none"
           />
         </div>
         <div className="py-7 px-10">
