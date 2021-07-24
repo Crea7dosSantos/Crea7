@@ -16,7 +16,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
     <React.Fragment key={history.id}>
       {/* left */}
       <div className="flex flex-row-reverse md:contents">
-        <div className="col-start-1 col-end-5 rounded-xl my-4 ml-auto shadow-md">
+        <div className="col-start-1 col-end-5 rounded-xl my-4 md:my-0 ml-auto shadow-md">
           <Link href={history.url}>
             <a>
               <div className="mb-1.5 flex items-center">
@@ -74,7 +74,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
             </a>
           </Link>
         </div>
-        <div className="col-start-6 col-end-10 rounded-xl my-4 mr-auto shadow-md">
+        <div className="col-start-6 col-end-10 rounded-xl my-4 md:my-0 mr-auto shadow-md">
           <Link href={history.url}>
             <a>
               <div className="mb-1.5 flex items-center">
