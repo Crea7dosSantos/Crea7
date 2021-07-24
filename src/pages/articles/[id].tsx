@@ -92,7 +92,7 @@ const ArticlePage: NextPage<Props> = ({ article, tags }) => {
             <p className="">
               {tags.map((tag) => (
                 <React.Fragment key={tag.id}>
-                  <TagItem tag={tag} backgroundColor="gray" fullRounded={false} />
+                  {/* <TagItem tag={tag} backgroundColor="gray" fullRounded={false} /> */}
                 </React.Fragment>
               ))}
             </p>
