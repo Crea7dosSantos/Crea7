@@ -8,7 +8,7 @@ import { MediumIcon } from '../atoms/MediumIcon'
 
 export const Profile: React.VFC = () => {
   return (
-    <div className="bg-gray-900 border border-gray-800 shadow-lg  rounded-3xl p-4">
+    <div className="bg-gray-900 border border-gray-800 shadow-lg rounded-3xl p-4 mx-5 sm:mx-0">
       <div className="sm:flex lg:block">
         <div className="relative h-32 w-32 mb-3 sm:mb-0 lg:mb-3">
           <img
