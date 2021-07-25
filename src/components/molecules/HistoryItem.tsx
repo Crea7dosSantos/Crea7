@@ -15,8 +15,8 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
   return position === 'left' ? (
     <React.Fragment key={history.id}>
       {/* left */}
-      <div className="flex flex-row-reverse md:contents">
-        <div className="col-start-1 col-end-5 rounded-xl my-4 md:my-0 ml-auto shadow-md">
+      <div className="flex flex-row-reverse lg:contents">
+        <div className="col-start-1 col-end-5 rounded-xl my-4 lg:my-0 ml-auto shadow-md">
           <Link href={history.url}>
             <a>
               <div className="mb-1.5 flex items-center">
@@ -35,7 +35,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
           </Link>
           <Link href={history.url}>
             <a className="inline-block mb-1.5">
-              <h4 className="font-semibold text-lg lg:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-weight-gray">
+              <h4 className="font-semibold text-lg xl:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-weight-gray">
                 {history.title}
               </h4>
             </a>
@@ -48,7 +48,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
             ))}
           </div>
         </div>
-        <div className="col-start-5 col-end-6 md:mx-auto relative mr-6">
+        <div className="col-start-5 col-end-6 lg:mx-auto relative mr-6">
           <Link href={history.url}>
             <a>
               <div className="h-full w-3 flex items-center justify-center">
@@ -63,8 +63,8 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
   ) : (
     <React.Fragment key={history.id}>
       {/* right */}
-      <div className="flex md:contents">
-        <div className="col-start-5 col-end-6 mr-6 md:mx-auto relative">
+      <div className="flex lg:contents">
+        <div className="col-start-5 col-end-6 mr-6 lg:mx-auto relative">
           <Link href={history.url}>
             <a>
               <div className="h-full w-3 flex items-center justify-center">
@@ -74,7 +74,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
             </a>
           </Link>
         </div>
-        <div className="col-start-6 col-end-10 rounded-xl my-4 md:my-0 mr-auto shadow-md">
+        <div className="col-start-6 col-end-10 rounded-xl my-4 lg:my-0 mr-auto shadow-md">
           <Link href={history.url}>
             <a>
               <div className="mb-1.5 flex items-center">
@@ -93,7 +93,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
           </Link>
           <Link href={history.url}>
             <a className="inline-block mb-1.5">
-              <h4 className="font-semibold text-lg lg:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-weight-gray">
+              <h4 className="font-semibold text-lg xl:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-weight-gray">
                 {history.title}
               </h4>
             </a>
