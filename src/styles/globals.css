@@ -4,18 +4,30 @@
 
 /* dangerouslySetInnerHTMLで表示するstyleの作成 */
 .article h1 {
-  color: black;
   padding-bottom: 0.2em;
   margin-bottom: 1.1rem;
   margin-top: 2.3rem;
   font-weight: bold;
-  font-size: 1.7em;
+  font-size: 1.5rem;
+  line-height: 1.7rem;
   position: relative;
   border-bottom: 1px solid rgba(92, 147, 187, 0.17);
 }
 
+.article h2 {
+  margin-top: 2.3rem;
+  margin-bottom: 1.1rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+}
+
 .article h3 {
-  font-size: 20px;
+  margin-top: 2.3rem;
+  margin-bottom: 1.1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1.3rem;
 }
 
 .article br {
