@@ -20,7 +20,7 @@ const ArticlePage: NextPage<Props> = ({ article, tags }) => {
           <img
             src="https://ik.imagekit.io/q5edmtudmz/post1_fOFO9VDzENE.jpg"
             alt="mountains"
-            className="w-full h-48 xs:h-56 sm:h-64 md:h-72 lg:h-96 xs:rounded-lg xs:rounded-b-none"
+            className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 xl:h-96 sm:rounded-lg sm:rounded-b-none"
           />
         </div>
         <div className="py-7 px-5 xs:px-10">
@@ -37,46 +37,10 @@ const ArticlePage: NextPage<Props> = ({ article, tags }) => {
               </React.Fragment>
             ))}
           </div>
-          <p className="text-sm text-gray-700 pt-7">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis ad
-            architecto at aut placeat quia, minus dolor praesentium officia maxime deserunt porro
-            amet ab debitis deleniti modi soluta similique... Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor
-            praesentium officia maxime deserunt porro amet ab debitis deleniti modi soluta
-            similique... Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis
-            ad architecto at aut placeat quia, minus dolor praesentium officia maxime deserunt porro
-            amet ab debitis deleniti modi soluta similique... Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor
-            praesentium officia maxime deserunt porro amet ab debitis deleniti modi soluta
-            similique... Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis
-            ad architecto at aut placeat quia, minus dolor praesentium officia maxime deserunt porro
-            amet ab debitis deleniti modi soluta similique...Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor
-            praesentium officia maxime deserunt porro amet ab debitis deleniti modi soluta
-            similique...Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis
-            ad architecto at aut placeat quia, minus dolor praesentium officia maxime deserunt porro
-            amet ab debitis deleniti modi soluta similique...Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor
-            praesentium officia maxime deserunt porro amet ab debitis deleniti modi soluta
-            similique...Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis
-            ad architecto at aut placeat quia, minus dolor praesentium officia maxime deserunt porro
-            amet ab debitis deleniti modi soluta similique...Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor
-            praesentium officia maxime deserunt porro amet ab debitis deleniti modi soluta
-            similique... consectetur adipisicing elit. Tempora reiciendis ad architecto at aut
-            placeat quia, minus dolor praesentium officia maxime deserunt porro amet ab debitis
-            deleniti modi soluta similique...Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor praesentium
-            officia maxime deserunt porro amet ab debitis deleniti modi soluta similique...Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis ad architecto at
-            aut placeat quia, minus dolor praesentium officia maxime deserunt porro amet ab debitis
-            deleniti modi soluta similique...Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor praesentium
-            officia maxime deserunt porro amet ab debitis deleniti modi soluta similique...Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis ad architecto at
-            aut placeat quia, minus dolor praesentium officia maxime deserunt porro amet ab debitis
-            deleniti modi soluta similique...
-          </p>
+          <div
+            className="prose prose-lg prose-xl markdown text-black pt-7"
+            dangerouslySetInnerHTML={{ __html: `${article.body}` }}
+          ></div>
         </div>
       </div>
     </Layout>

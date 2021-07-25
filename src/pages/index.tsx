@@ -12,7 +12,7 @@ const Timeline: NextPage<Props> = ({ histories }) => {
   return (
     <section>
       <div className="text-white py-8 bg-regal-weight-black">
-        <div className="container mx-auto flex flex-col items-start lg:flex-row my-12 lg:my-24">
+        <div className="container mx-auto flex flex-col items-start xl:flex-row my-12 xl:my-24">
           <TopProfile />
           <HistoryItemList histories={histories} />
         </div>
