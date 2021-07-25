@@ -10,7 +10,7 @@ export const Footer: React.VFC<FooterProps> = ({ tags }) => {
     <footer className="bg-regal-middle-black py-5 text-regal-footer-light-gray text-sm">
       <div className="m-auto w-11/12 sm:w-11/12 md:w-10/12 lg:w-9/12 2xl:w-7/12">
         <div>
-          <h3 className="text-lg mb-2 text-center text-white">Tags</h3>
+          <h3 className="text-base mb-2 text-center text-white">Tags</h3>
           <div className="">
             {tags.map((tag) => (
               <React.Fragment key={tag.id}>
