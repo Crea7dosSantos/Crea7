@@ -37,46 +37,10 @@ const ArticlePage: NextPage<Props> = ({ article, tags }) => {
               </React.Fragment>
             ))}
           </div>
-          <p className="text-sm text-gray-700 pt-7">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis ad
-            architecto at aut placeat quia, minus dolor praesentium officia maxime deserunt porro
-            amet ab debitis deleniti modi soluta similique... Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor
-            praesentium officia maxime deserunt porro amet ab debitis deleniti modi soluta
-            similique... Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis
-            ad architecto at aut placeat quia, minus dolor praesentium officia maxime deserunt porro
-            amet ab debitis deleniti modi soluta similique... Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor
-            praesentium officia maxime deserunt porro amet ab debitis deleniti modi soluta
-            similique... Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis
-            ad architecto at aut placeat quia, minus dolor praesentium officia maxime deserunt porro
-            amet ab debitis deleniti modi soluta similique...Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor
-            praesentium officia maxime deserunt porro amet ab debitis deleniti modi soluta
-            similique...Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis
-            ad architecto at aut placeat quia, minus dolor praesentium officia maxime deserunt porro
-            amet ab debitis deleniti modi soluta similique...Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor
-            praesentium officia maxime deserunt porro amet ab debitis deleniti modi soluta
-            similique...Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis
-            ad architecto at aut placeat quia, minus dolor praesentium officia maxime deserunt porro
-            amet ab debitis deleniti modi soluta similique...Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor
-            praesentium officia maxime deserunt porro amet ab debitis deleniti modi soluta
-            similique... consectetur adipisicing elit. Tempora reiciendis ad architecto at aut
-            placeat quia, minus dolor praesentium officia maxime deserunt porro amet ab debitis
-            deleniti modi soluta similique...Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor praesentium
-            officia maxime deserunt porro amet ab debitis deleniti modi soluta similique...Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis ad architecto at
-            aut placeat quia, minus dolor praesentium officia maxime deserunt porro amet ab debitis
-            deleniti modi soluta similique...Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Tempora reiciendis ad architecto at aut placeat quia, minus dolor praesentium
-            officia maxime deserunt porro amet ab debitis deleniti modi soluta similique...Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Tempora reiciendis ad architecto at
-            aut placeat quia, minus dolor praesentium officia maxime deserunt porro amet ab debitis
-            deleniti modi soluta similique...
-          </p>
+          <div
+            className="prose prose-lg prose-xl markdown text-black pt-7"
+            dangerouslySetInnerHTML={{ __html: `${article.body}` }}
+          ></div>
         </div>
       </div>
     </Layout>
