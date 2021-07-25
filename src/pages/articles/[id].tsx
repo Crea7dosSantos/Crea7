@@ -15,15 +15,15 @@ type Props = {
 const ArticlePage: NextPage<Props> = ({ article, tags }) => {
   return (
     <Layout tags={tags}>
-      <div className="bg-white shadow-2xl sm:rounded-lg mb-6 tracking-wide">
+      <div className="bg-white shadow-2xl xs:rounded-lg mb-6 tracking-wide">
         <div className="md:flex-shrink-0">
           <img
             src="https://ik.imagekit.io/q5edmtudmz/post1_fOFO9VDzENE.jpg"
             alt="mountains"
-            className="w-full h-56 sm:h-64 md:h-72 lg:h-96 sm:rounded-lg sm:rounded-b-none"
+            className="w-full h-48 xs:h-56 sm:h-64 md:h-72 lg:h-96 xs:rounded-lg xs:rounded-b-none"
           />
         </div>
-        <div className="py-7 px-5 sm:px-10">
+        <div className="py-7 px-5 xs:px-10">
           <p className="text-gray-300">
             <Moment format="YYYY.MM.DD">{article.createdAt}</Moment>
           </p>
