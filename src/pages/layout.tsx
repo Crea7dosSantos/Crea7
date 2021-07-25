@@ -14,10 +14,10 @@ const Layout: NextPage<Props> = ({ children, tags }) => {
     <div>
       <Header />
       <div className="bg-black text-white">
-        <div className="m-auto w-12/11 sm:w-11/12 md:w-10/12 lg:w-11/12 xl:w-9/12 py-12">
-          <div className="flex flex-col items-start lg:flex-row">
-            <div className="w-full lg:w-2/3">{children}</div>
-            <div className="w-full lg:w-1/3 ml-0 lg:ml-12 sticky lg:top-10 mt-5 lg:mt-0">
+        <div className="m-auto w-12/12 sm:w-11/12 lg:w-10/12 xl:w-11/12 2xl:w-9/12 pt-0 sm:pt-12 pb-12">
+          <div className="flex flex-col items-start xl:flex-row">
+            <div className="w-full xl:w-2/3">{children}</div>
+            <div className="w-full xl:w-1/3 ml-0 xl:ml-12 sticky xl:top-10 mt-5 xl:mt-0">
               <Profile />
             </div>
           </div>
