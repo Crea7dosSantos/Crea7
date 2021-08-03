@@ -1,4 +1,4 @@
-import { Tag } from './tag'
+import { Category } from './category'
 import { TopImage } from './topImage'
 
 export type History = {
@@ -6,7 +6,7 @@ export type History = {
   title: string
   url: string
   topImage: TopImage
-  tags: Tag[]
+  categories: Category[]
   createdAt: string
   updatedAt: string
   publishedAt: string

@@ -22,7 +22,7 @@ Normal.args = {
       height: 400,
       width: 400,
     },
-    tags: [],
+    categories: [],
     createdAt: '',
     updatedAt: '',
     publishedAt: '',

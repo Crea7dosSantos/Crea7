@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getHostFromURL, getHostIconFromURL, formatDate } from '../../lib/helper'
 import { History } from '../../types/history'
-import { TagItem } from './TagItem'
+import { CategoryItem } from './CategoryItem'
 
 export interface HistoryItemProps {
   history: History
@@ -41,9 +41,9 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
             </a>
           </Link>
           <div>
-            {history.tags.map((tag) => (
-              <React.Fragment key={tag.id}>
-                <TagItem tag={tag} backgroundColor="gray" fullRounded />
+            {history.categories.map((category) => (
+              <React.Fragment key={category.id}>
+                <CategoryItem category={category} backgroundColor="gray" fullRounded />
               </React.Fragment>
             ))}
           </div>
@@ -99,9 +99,9 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
             </a>
           </Link>
           <div>
-            {history.tags.map((tag) => (
-              <React.Fragment key={tag.id}>
-                <TagItem tag={tag} backgroundColor="gray" fullRounded />
+            {history.categories.map((category) => (
+              <React.Fragment key={category.id}>
+                <CategoryItem category={category} backgroundColor="gray" fullRounded />
               </React.Fragment>
             ))}
           </div>

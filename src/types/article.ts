@@ -1,4 +1,4 @@
-import { Tag } from './tag'
+import { Category } from './category'
 import { TopImage } from './topImage'
 
 export type Article = {
@@ -6,7 +6,7 @@ export type Article = {
   title: string
   body: string
   topImage: TopImage
-  tags: Tag[]
+  categories: Category[]
   createdAt: string
   updatedAt: string
   publishedAt: string

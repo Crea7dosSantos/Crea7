@@ -1,15 +1,15 @@
 import React from 'react'
 import { NextPage } from 'next'
-import { Tag } from '../types/tag'
+import { Category } from '../types/category'
 import { Profile } from '../components/organisms/Profile'
 import { Header } from '../components/organisms/Header'
 import { Footer } from '../components/organisms/Footer'
 
 type Props = {
-  tags: Tag[]
+  categories: Category[]
 }
 
-const Layout: NextPage<Props> = ({ children, tags }) => {
+const Layout: NextPage<Props> = ({ children, categories }) => {
   return (
     <div>
       <Header />
@@ -23,7 +23,7 @@ const Layout: NextPage<Props> = ({ children, tags }) => {
           </div>
         </div>
       </div>
-      <Footer tags={tags} />
+      <Footer categories={categories} />
     </div>
   )
 }
