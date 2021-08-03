@@ -1,24 +1,24 @@
 import React from 'react'
-import { Tag } from '../../types/tag'
+import { Category } from '../../types/category'
 
 export interface FooterProps {
-  tags: Tag[]
+  categories: Category[]
 }
 
-export const Footer: React.VFC<FooterProps> = ({ tags }) => {
+export const Footer: React.VFC<FooterProps> = ({ categories }) => {
   return (
     <footer className="bg-regal-middle-black py-5 text-regal-footer-light-gray text-sm">
       <div className="m-auto w-11/12 sm:w-11/12 md:w-10/12 lg:w-9/12 2xl:w-7/12">
         <div>
-          <h3 className="text-base mb-2 text-center text-white">Tags</h3>
+          <h3 className="text-base mb-2 text-center text-white">Categories</h3>
           <div className="">
-            {tags.map((tag) => (
-              <React.Fragment key={tag.id}>
+            {categories.map((category) => (
+              <React.Fragment key={category.id}>
                 <a
                   href=""
                   className="text-sm inline-block mr-4 hover:text-white border-b hover:border-solid border-transparent hover:border-white pb-0"
                 >
-                  {tag.name}
+                  {category.name}
                 </a>
               </React.Fragment>
             ))}

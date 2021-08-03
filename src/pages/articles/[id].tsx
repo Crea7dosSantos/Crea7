@@ -3,18 +3,18 @@ import Moment from 'react-moment'
 import Layout from '../layout'
 import { NextPage } from 'next'
 import { Article } from '../../types/article'
-import { Tag } from '../../types/tag'
+import { Category } from '../../types/category'
 import { fetchArticles, fetchArticleById } from '../../service/article'
-import { TagItem } from '../../components/molecules/TagItem'
+import { CategoryItem } from '../../components/molecules/CategoryItem'
 
 type Props = {
   article: Article
-  tags: Tag[]
+  categories: Category[]
 }
 
-const ArticlePage: NextPage<Props> = ({ article, tags }) => {
+const ArticlePage: NextPage<Props> = ({ article, categories }) => {
   return (
-    <Layout tags={tags}>
+    <Layout categories={categories}>
       <div className="bg-white shadow-2xl xs:rounded-lg mb-6 tracking-wide">
         <div className="md:flex-shrink-0">
           <img
@@ -31,9 +31,9 @@ const ArticlePage: NextPage<Props> = ({ article, tags }) => {
             {article.title}
           </h1>
           <div className="">
-            {article.tags.map((tag) => (
-              <React.Fragment key={tag.id}>
-                <TagItem tag={tag} backgroundColor="black" fullRounded={false} />
+            {article.categories.map((category) => (
+              <React.Fragment key={category.id}>
+                <CategoryItem category={category} backgroundColor="black" fullRounded={false} />
               </React.Fragment>
             ))}
           </div>
@@ -60,12 +60,12 @@ export const getStaticProps = async (contents) => {
   const res = await fetchArticleById(id)
 
   const article = await res[0].json()
-  const tags = await res[1].json()
+  const categories = await res[1].json()
 
   return {
     props: {
       article: article,
-      tags: tags.contents,
+      categories: categories.contents,
     },
   }
 }
