@@ -7,7 +7,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [(story) => <div className="bg-regal-weight-black">{story()} </div>],
+  decorators: [(story) => <div className="bg-white">{story()} </div>],
 } as Meta<CategoryItemProps>
 
 const Template: Story<CategoryItemProps> = (args) => <CategoryItem {...args} />
