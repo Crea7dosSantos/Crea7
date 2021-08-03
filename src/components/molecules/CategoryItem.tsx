@@ -1,16 +1,20 @@
 import React from 'react'
 import Link from 'next/link'
-import { Tag } from '../../types/tag'
+import { Category } from '../../types/category'
 
-export interface TagItemProps {
-  tag: Tag
+export interface CategoryItemProps {
+  category: Category
   backgroundColor: 'black' | 'gray'
   fullRounded: boolean
 }
 
-export const TagItem: React.VFC<TagItemProps> = ({ tag, backgroundColor, fullRounded }) => {
+export const CategoryItem: React.VFC<CategoryItemProps> = ({
+  category,
+  backgroundColor,
+  fullRounded,
+}) => {
   return (
-    <React.Fragment key={tag.id}>
+    <React.Fragment key={category.id}>
       <Link href="">
         <a
           className={`inline-block ${
@@ -18,7 +22,7 @@ export const TagItem: React.VFC<TagItemProps> = ({ tag, backgroundColor, fullRou
           } ${fullRounded ? 'rounded-full' : 'rounded'} py-1 px-2 mr-2 mt-1.5 text-xs text-white`}
           href="#"
         >
-          {tag.name}
+          {category.name}
         </a>
       </Link>
     </React.Fragment>

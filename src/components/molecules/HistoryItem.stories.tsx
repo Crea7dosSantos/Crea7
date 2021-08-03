@@ -35,7 +35,7 @@ Left.args = {
       height: 400,
       width: 400,
     },
-    tags: [
+    categories: [
       {
         id: '1',
         name: 'walk',

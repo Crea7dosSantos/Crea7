@@ -14,7 +14,7 @@ const Template: Story<FooterProps> = (args) => <Footer {...args} />
 
 export const Normal = Template.bind({})
 Normal.args = {
-  tags: [
+  categories: [
     {
       id: '1',
       name: 'AWS',

@@ -30,9 +30,9 @@ export const ArticleCard: React.VFC<ArticleCardProps> = ({ article }) => {
             <h2>{article.title}</h2>
           </a>
         </Link>
-        {article.tags.map((tag) => (
-          <React.Fragment key={tag.id}>
-            <span>{tag.name}</span>
+        {article.categories.map((category) => (
+          <React.Fragment key={category.id}>
+            <span>{category.name}</span>
           </React.Fragment>
         ))}
       </div>
