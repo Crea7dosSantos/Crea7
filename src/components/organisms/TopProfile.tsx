@@ -18,7 +18,7 @@ export const TopProfile: React.VFC = () => {
         for daily updates.
       </p>
       <a
-        href="#"
+        href="/"
         className="bg-transparent mr-auto hover:bg-regal-weight-gray text-regal-light-gray hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border hover:border-transparent"
       >
         Explore Now
