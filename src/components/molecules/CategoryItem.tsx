@@ -15,12 +15,11 @@ export const CategoryItem: React.VFC<CategoryItemProps> = ({
 }) => {
   return (
     <React.Fragment key={category.id}>
-      <Link href="">
+      <Link href="/categories/[id]" as={`/categories/${category.id}`}>
         <a
           className={`inline-block ${
             backgroundColor === 'gray' ? 'bg-regal-weight-gray' : 'bg-black'
           } ${fullRounded ? 'rounded-full' : 'rounded'} py-1 px-2 mr-2 mt-1.5 text-xs text-white`}
-          href="#"
         >
           {category.name}
         </a>

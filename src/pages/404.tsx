@@ -13,7 +13,7 @@ export default function Custom404() {
           <div className="text-lg mb-8">
             You may have mistyped the address or the page may have moved.
           </div>
-          <a href="#" className="border border-white rounded p-4">
+          <a href="/" className="border border-white rounded p-4">
             Go Home
           </a>
         </div>
