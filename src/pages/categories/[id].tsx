@@ -9,16 +9,24 @@ import { fetchCategories } from '../../service/category'
 type Props = {
   histories: History[]
   categories: Category[]
+  category: Category
 }
 
-const CategoryPage: NextPage<Props> = ({ histories, categories }) => {
+const CategoryPage: NextPage<Props> = ({ histories, categories, category }) => {
   return (
     <Layout categories={categories}>
-      <h1>Category</h1>
-      <div>
+      <h1>{category.name}</h1>
+      <div className="flex flex-col">
         {histories.map((history) => (
           <React.Fragment key={history.id}>
-            <li>{history.title}</li>
+            <div className="flex items-center py-6 mb-border-2 border-b border-gray">
+              <img
+                src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
+                alt="aji"
+                className="w-24 h-24 object-cover rounded mr-6"
+              />
+              <p>{history.title}</p>
+            </div>
           </React.Fragment>
         ))}
       </div>
@@ -40,11 +48,13 @@ export const getStaticProps = async (contents) => {
 
   const histories = await res[0].json()
   const categories = await res[1].json()
+  const category = categories.contents.filter((category) => category.id === id)
 
   return {
     props: {
       histories: histories.contents,
       categories: categories.contents,
+      category: category[0],
     },
   }
 }
