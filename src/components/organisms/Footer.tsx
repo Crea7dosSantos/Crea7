@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import { Category } from '../../types/category'
 
@@ -14,12 +15,11 @@ export const Footer: React.VFC<FooterProps> = ({ categories }) => {
           <div className="">
             {categories.map((category) => (
               <React.Fragment key={category.id}>
-                <a
-                  href=""
-                  className="text-sm inline-block mr-4 hover:text-white border-b hover:border-solid border-transparent hover:border-white pb-0"
-                >
-                  {category.name}
-                </a>
+                <Link href="/categories/[id]" as={`/categories/${category.id}`}>
+                  <a className="text-sm inline-block mr-4 hover:text-white border-b hover:border-solid border-transparent hover:border-white pb-0">
+                    {category.name}
+                  </a>
+                </Link>
               </React.Fragment>
             ))}
           </div>
