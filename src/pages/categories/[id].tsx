@@ -5,6 +5,7 @@ import { Category } from '../../types/category'
 import { History } from '../../types/history'
 import { fetchHistoriesByCategory } from '../../service/history'
 import { fetchCategories } from '../../service/category'
+import { HistoryByCategoryItem } from '../../components/molecules/HistoryByCategoryItem'
 
 type Props = {
   histories: History[]
@@ -15,18 +16,11 @@ type Props = {
 const CategoryPage: NextPage<Props> = ({ histories, categories, category }) => {
   return (
     <Layout categories={categories}>
-      <h1>{category.name}</h1>
-      <div className="flex flex-col">
+      <h1 className="mb-7 mt-10 sm:mt-0 text-3xl font-medium mx-5 sm:mx-0">{category.name}</h1>
+      <div className="flex flex-col mx-5 sm:mx-0">
         {histories.map((history) => (
           <React.Fragment key={history.id}>
-            <div className="flex items-center py-6 mb-border-2 border-b border-gray">
-              <img
-                src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
-                alt="aji"
-                className="w-24 h-24 object-cover rounded mr-6"
-              />
-              <p>{history.title}</p>
-            </div>
+            <HistoryByCategoryItem history={history} />
           </React.Fragment>
         ))}
       </div>
