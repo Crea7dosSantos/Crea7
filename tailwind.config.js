@@ -13,10 +13,6 @@ module.exports = {
         'regal-footer-black': '#111',
         'regal-footer-light-gray': '#6e6e73',
       },
-      screens: {
-        xs: '501px',
-        // => @media (min-width: 501px) { ... }
-      },
     },
     fontFamily: {
       sans: ['Nunito Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
