@@ -15,7 +15,7 @@ type Props = {
 const ArticlePage: NextPage<Props> = ({ article, categories }) => {
   return (
     <Layout categories={categories}>
-      <div className="bg-white shadow-2xl xs:rounded-lg mb-6 tracking-wide">
+      <div className="bg-white shadow-2xl sm:rounded-lg mb-6 tracking-wide">
         <div className="md:flex-shrink-0">
           <img
             src="https://ik.imagekit.io/q5edmtudmz/post1_fOFO9VDzENE.jpg"
@@ -33,7 +33,7 @@ const ArticlePage: NextPage<Props> = ({ article, categories }) => {
           <div className="">
             {article.categories.map((category) => (
               <React.Fragment key={category.id}>
-                <CategoryItem category={category} backgroundColor="black" fullRounded={false} />
+                <CategoryItem category={category} backgroundColor="black" rounded="rounded" />
               </React.Fragment>
             ))}
           </div>
