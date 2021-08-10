@@ -5,7 +5,6 @@ import { Category } from '../../types/category'
 export interface CategoryItemProps {
   category: Category
   backgroundColor: 'black' | 'gray'
-  size?: 'small' | 'medium'
   rounded?: 'rounded-sm' | 'rounded' | 'rounded-full'
 }
 

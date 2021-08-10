@@ -1,6 +1,6 @@
 import React from 'react'
 import Moment from 'react-moment'
-import Layout from '../layout'
+import Layout from '../../components/template/layout'
 import { NextPage } from 'next'
 import { Article } from '../../types/article'
 import { Category } from '../../types/category'

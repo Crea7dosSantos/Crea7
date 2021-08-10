@@ -1,9 +1,9 @@
 import React from 'react'
 import { NextPage } from 'next'
-import { Category } from '../types/category'
-import { Profile } from '../components/organisms/Profile'
-import { Header } from '../components/organisms/Header'
-import { Footer } from '../components/organisms/Footer'
+import { Category } from '../../types/category'
+import { Profile } from '../../components/organisms/Profile'
+import { Header } from '../../components/organisms/Header'
+import { Footer } from '../../components/organisms/Footer'
 
 type Props = {
   categories: Category[]
