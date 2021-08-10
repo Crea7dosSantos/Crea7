@@ -7,6 +7,7 @@
     "build": "next build",
     "test": "react-scripts test",
     "start": "next start",
+    "export": "next build && next export",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "start-storybook": "start-storybook -s ./public -p 9001",
@@ -22,7 +23,7 @@
     ]
   },
   "dependencies": {
-    "@tailwindcss/postcss7-compat": "^2.1.2",
+    "@tailwindcss/postcss7-compat": "npm:@tailwindcss/postcss7-compat",
     "autoprefixer": "^9",
     "next": "10.2.0",
     "postcss": "^7",

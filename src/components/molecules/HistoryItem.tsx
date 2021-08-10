@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { getHostFromURL, getHostIconFromURL, formatDate } from '../../lib/helper'
 import { History } from '../../types/history'
 import { CategoryItem } from './CategoryItem'
@@ -20,13 +19,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
           <Link href={history.url}>
             <a>
               <div className="mb-1.5 flex items-center">
-                <Image
-                  alt="icon"
-                  src={getHostIconFromURL(history.url)}
-                  width={14}
-                  height={14}
-                  quality={100}
-                />
+                <img src={getHostIconFromURL(history.url)} alt="sns-icon" className="w-3.5 h-3.5" />
                 <p className="ml-2 text-base text-regal-light-gray">
                   Posted on {hostname} / {formatDate(history.createdAt)}
                 </p>
@@ -78,13 +71,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
           <Link href={history.url}>
             <a>
               <div className="mb-1.5 flex items-center">
-                <Image
-                  alt="icon"
-                  src={getHostIconFromURL(history.url)}
-                  width={14}
-                  height={14}
-                  quality={100}
-                />
+                <img src={getHostIconFromURL(history.url)} alt="sns-icon" className="w-3.5 h-3.5" />
                 <p className="ml-2 text-base text-regal-light-gray">
                   Posted on {hostname} / {formatDate(history.createdAt)}
                 </p>

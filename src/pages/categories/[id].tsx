@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../layout'
+import Layout from '../../components/template/layout'
 import { NextPage } from 'next'
 import { Category } from '../../types/category'
 import { History } from '../../types/history'
