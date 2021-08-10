@@ -13,8 +13,8 @@ export const HistoryByCategoryItem: React.VFC<HistoryByCategoryItemProps> = ({ h
     <Link href={history.url}>
       <div className="flex items-start py-4 xl:py-6 mt-border-2 border-t border-gray-600 cursor-pointer hover:bg-gray-700">
         <img
-          src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
-          alt="aji"
+          src={history.topImage.url}
+          alt="top-image"
           className="w-20 h-20 xl:w-24 xl:h-24 object-cover rounded mr-6"
         />
         <div>
