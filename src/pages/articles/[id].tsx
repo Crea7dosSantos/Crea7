@@ -30,7 +30,7 @@ const ArticlePage: NextPage<Props> = ({ article, categories }) => {
           <h1 className="font-bold text-3xl text-black tracking-normal pt-2 pb-2">
             {article.title}
           </h1>
-          <div className="">
+          <div>
             {article.categories.map((category) => (
               <React.Fragment key={category.id}>
                 <CategoryItem category={category} backgroundColor="black" rounded="rounded" />
