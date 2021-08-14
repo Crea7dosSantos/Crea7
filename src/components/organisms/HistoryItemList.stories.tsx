@@ -39,7 +39,7 @@ Normal.args = {
       ...HistoryItemStories.Left.args.history,
       id: '3',
       title: 'GAEのデプロイでquotas were exceededエラーが発生したときの対処法',
-      url: 'https://c7ds-log.microcms.io/api/v1',
+      url: 'https://crea7.microcms.io/api/v1',
       createdAt: '2021-04-08T07:13:40.445Z',
     },
     {
