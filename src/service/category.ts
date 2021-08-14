@@ -3,7 +3,7 @@ const key = {
 }
 
 const limit = 30
-const url = `https://c7ds-log.microcms.io/api/v1/categories?limit=${limit}`
+const url = `https://crea7.microcms.io/api/v1/categories?limit=${limit}`
 
 export const fetchCategories = async () => await fetch(url, key)
 
