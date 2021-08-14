@@ -3,7 +3,7 @@ import { fetchCategoriesUrl } from './category'
 const key = {
   headers: { 'X-API-KEY': process.env.GET_API_KEY },
 }
-const url = 'https://c7ds-log.microcms.io/api/v1/articles'
+const url = 'https://crea7.microcms.io/api/v1/articles'
 
 export const fetchArticles = async () => await fetch(url, key)
 
