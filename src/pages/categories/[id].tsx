@@ -15,7 +15,11 @@ type Props = {
 
 const CategoryPage: NextPage<Props> = ({ histories, categories, category }) => {
   return (
-    <Layout categories={categories}>
+    <Layout
+      categories={categories}
+      title={`Crea7 histories by ${category.name}`}
+      keyword={category.name}
+    >
       <h1 className="mb-7 mt-10 sm:mt-0 text-3xl font-medium mx-5 sm:mx-0">{category.name}</h1>
       <div className="flex flex-col mx-5 sm:mx-0">
         {histories.map((history) => (
