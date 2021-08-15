@@ -13,8 +13,10 @@ type Props = {
 }
 
 const ArticlePage: NextPage<Props> = ({ article, categories }) => {
+  const categoriesByArticle = article.categories.map((category) => category.name)
+
   return (
-    <Layout categories={categories}>
+    <Layout categories={categories} title={article.title} keyword={categoriesByArticle.join(' ')}>
       <div className="bg-white shadow-2xl sm:rounded-lg mb-6 tracking-wide">
         <div className="md:flex-shrink-0">
           <img
