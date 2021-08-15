@@ -19,7 +19,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
           <Link href={history.url}>
             <a>
               <div className="mb-1.5 flex items-center">
-                <img src={getHostIconFromURL(history.url)} alt="sns-icon" className="w-3.5 h-3.5" />
+                <img src={getHostIconFromURL(history.url)} width="14" height="14" alt="sns-icon" />
                 <p className="ml-2 text-base text-regal-light-gray">
                   Posted on {hostname} / {formatDate(history.createdAt)}
                 </p>
@@ -71,7 +71,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
           <Link href={history.url}>
             <a>
               <div className="mb-1.5 flex items-center">
-                <img src={getHostIconFromURL(history.url)} alt="sns-icon" className="w-3.5 h-3.5" />
+                <img src={getHostIconFromURL(history.url)} width="14" height="14" alt="sns-icon" />
                 <p className="ml-2 text-base text-regal-light-gray">
                   Posted on {hostname} / {formatDate(history.createdAt)}
                 </p>
