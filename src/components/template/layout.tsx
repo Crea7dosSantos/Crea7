@@ -16,7 +16,6 @@ const Layout: NextPage<Props> = ({ children, categories, title, keyword }) => {
   return (
     <div>
       <Head>
-        <html lang="ja"></html>
         <title>{title}</title>
         <meta name="keyword" content={`Crea7 ${keyword}`}></meta>
         <meta
