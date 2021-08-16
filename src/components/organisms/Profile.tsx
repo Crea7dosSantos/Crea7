@@ -14,7 +14,9 @@ export const Profile: React.VFC = () => {
           <img
             src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
             alt="aji"
-            className="w-32 h-32 object-cover rounded-2xl"
+            className="object-cover rounded-2xl"
+            width="128"
+            height="128"
           />
         </div>
         <div className="flex-auto sm:ml-5 xl:ml-0 justify-evenly">
