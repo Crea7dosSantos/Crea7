@@ -9,9 +9,9 @@ export interface FooterProps {
 export const Footer: React.VFC<FooterProps> = ({ categories }) => {
   return (
     <footer className="bg-regal-middle-black py-5 text-regal-footer-light-gray text-sm">
-      <div className="m-auto w-11/12 sm:w-11/12 md:w-10/12 lg:w-9/12 2xl:w-7/12">
+      <div className="m-auto w-11/12 sm:w-11/12 md:w-10/12 lg:w-9/12 2xl:w-7/12 text-center">
         <div>
-          <h3 className="text-base mb-2 text-center text-white">Categories</h3>
+          <h3 className="text-base mb-2 text-white">Categories</h3>
           <div className="">
             {categories.map((category) => (
               <React.Fragment key={category.id}>
@@ -24,7 +24,7 @@ export const Footer: React.VFC<FooterProps> = ({ categories }) => {
             ))}
           </div>
         </div>
-        <div className="mt-5 pt-5 border-t border-gray-600 text-center">
+        <div className="mt-5 pt-5 border-t border-gray-600">
           <a
             href="https://github.com/Crea7dosSantos"
             className="hover:text-white border-b hover:border-solid border-transparent hover:border-white"
