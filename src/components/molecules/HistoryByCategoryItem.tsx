@@ -11,7 +11,7 @@ export interface HistoryByCategoryItemProps {
 export const HistoryByCategoryItem: React.VFC<HistoryByCategoryItemProps> = ({ history }) => {
   return (
     <Link href={history.url}>
-      <div className="flex items-start py-4 xl:py-6 mt-border-2 border-t border-gray-600 cursor-pointer hover:bg-gray-700">
+      <div className="flex items-start py-4 xl:py-6 mt-border-2 border-t border-gray-600 cursor-pointer hover:bg-gray-900">
         <img
           src={history.topImage.url}
           alt="top-image"

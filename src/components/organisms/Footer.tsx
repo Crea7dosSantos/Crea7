@@ -12,7 +12,7 @@ export const Footer: React.VFC<FooterProps> = ({ categories }) => {
       <div className="m-auto w-11/12 sm:w-11/12 md:w-10/12 lg:w-9/12 2xl:w-7/12 text-center">
         <div>
           <h3 className="text-base mb-2 text-white">Categories</h3>
-          <div className="">
+          <div>
             {categories.map((category) => (
               <React.Fragment key={category.id}>
                 <Link href="/categories/[id]" as={`/categories/${category.id}`}>
