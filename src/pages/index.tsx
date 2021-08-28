@@ -14,7 +14,7 @@ const Timeline: NextPage<Props> = ({ histories }) => {
     <section>
       <Head>
         <title>Crea7 timeline</title>
-        <meta name="keyword" content="Crea7 timeline"></meta>
+        <meta name="keyword" content="Crea7 timeline tech blog developer engineer"></meta>
         <meta
           name="description"
           content="Crea7 timeline. web/iOS application developer. This is my history. Follow @crea7_3tos for daily updates."

@@ -5,7 +5,9 @@ export const TopProfile: React.VFC = () => {
   return (
     <div className="flex flex-col w-full sticky xl:top-36 xl:w-1/3 mt-2 xl:mt-8 px-8">
       <p className="ml-2 text-regal-light-gray uppercase tracking-loose">Timeline</p>
-      <p className="text-3xl xl:text-4xl leading-normal xl:leading-relaxed mb-2">Crea7 timeline</p>
+      <h1 className="text-3xl xl:text-4xl leading-normal xl:leading-relaxed mb-2">
+        Crea7 timeline
+      </h1>
       <p className="text-sm xl:text-base text-regal-light-gray mb-4">
         web/iOS application developer. This is my history. <br />
         Follow{' '}
