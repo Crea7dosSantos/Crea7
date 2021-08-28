@@ -48,24 +48,33 @@ export const Profile: React.VFC = () => {
               <QiitaIcon width={16} height={16} />
               <p className="ml-2">Qiita</p>
             </a>
-            <a href="" className="flex-shrink inline-flex items-center hover:text-blue-100">
+            <a
+              href="https://medium.com/@crea7"
+              className="flex-shrink inline-flex items-center hover:text-blue-100"
+            >
               <MediumIcon width={16} height={16} />
               <p className="ml-2">Medium</p>
             </a>
           </div>
           <div className="flex pt-1 text-sm text-gray-400">
             <a
-              href="https://twitter.com/Crea7dosSantos"
+              href="https://twitter.com/crea7_3tos"
               className="flex-1 inline-flex items-center hover:text-blue-100"
             >
               <TwitterIcon width={16} height={16} />
               <p className="ml-2">Twitter</p>
             </a>
-            <a href="" className="flex-1 inline-flex items-center hover:text-blue-100">
+            <a
+              href="https://zenn.dev/crea7"
+              className="flex-1 inline-flex items-center hover:text-blue-100"
+            >
               <ZennIcon width={16} height={16} />
               <p className="ml-2">Zenn</p>
             </a>
-            <a href="" className="flex-shrinkG inline-flex items-center hover:text-blue-100">
+            <a
+              href="mailto:cr26yusaku0720@icloud.com"
+              className="flex-shrinkG inline-flex items-center hover:text-blue-100"
+            >
               <EMailIcon width={16} height={16} />
               <p className="ml-2">E-mail</p>
             </a>
