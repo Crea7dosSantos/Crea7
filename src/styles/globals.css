@@ -5,6 +5,11 @@
 /* Markdown Styles */
 /* Global */
 
+html {
+  background-color: #1c1c1f;
+  height: 100%;
+}
+
 .markdown {
   margin-right: 0px;
 }
