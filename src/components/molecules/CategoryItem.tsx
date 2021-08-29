@@ -23,11 +23,11 @@ export const CategoryItem: React.VFC<CategoryItemProps> = ({
       : ''
   const medium =
     rounded === 'rounded-sm'
-      ? 'text-xs py-1 px-2'
+      ? 'xl:text-xs xl:py-1 xl:px-2'
       : rounded === 'rounded-full'
-      ? 'text-xs py-1 px-2'
+      ? 'xl:text-xs xl:py-1 xl:px-2'
       : rounded === 'rounded'
-      ? 'text-xs py-1 px-2'
+      ? 'xl:text-xs xl:py-1 xl:px-2'
       : ''
   return (
     <React.Fragment key={category.id}>
@@ -35,7 +35,7 @@ export const CategoryItem: React.VFC<CategoryItemProps> = ({
         <a
           className={`inline-block ${
             backgroundColor === 'gray' ? 'bg-regal-weight-gray' : 'bg-black'
-          } ${rounded} mr-2 mt-1.5 ${small} xl:${medium}`}
+          } ${rounded} mr-2 mt-1.5 ${small} ${medium}`}
         >
           {category.name}
         </a>

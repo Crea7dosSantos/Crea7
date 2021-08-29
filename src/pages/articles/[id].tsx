@@ -22,7 +22,7 @@ const ArticlePage: NextPage<Props> = ({ article, categories }) => {
           <img
             src="https://ik.imagekit.io/q5edmtudmz/post1_fOFO9VDzENE.jpg"
             alt="mountains"
-            className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 xl:h-96 sm:rounded-lg sm:rounded-b-none"
+            className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 2xl:h-96 sm:rounded-lg sm:rounded-b-none"
           />
         </div>
         <div className="py-7 px-5 xs:px-10">

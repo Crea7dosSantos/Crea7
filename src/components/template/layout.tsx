@@ -23,18 +23,20 @@ const Layout: NextPage<Props> = ({ children, categories, title, keyword }) => {
           content="Crea7 timeline. web/iOS application developer. This is my history. Follow @crea7_3tos for daily updates."
         ></meta>
       </Head>
-      <Header />
-      <div className="bg-black text-white">
-        <div className="m-auto w-12/12 sm:w-11/12 lg:w-9/12 xl:w-11/12 2xl:w-9/12 pt-0 sm:pt-12 pb-12">
-          <div className="flex flex-col items-start xl:flex-row">
-            <div className="w-full xl:w-2/3">{children}</div>
-            <div className="w-full xl:w-1/3 ml-0 xl:ml-12 sticky xl:top-10 mt-5 xl:mt-0">
-              <Profile />
+      <body className="flex flex-col min-h-screen">
+        <Header />
+        <div className="bg-black text-white flex-1">
+          <div className="m-auto w-12/12 sm:w-11/12 lg:w-9/12 xl:w-11/12 2xl:w-9/12 pt-0 sm:pt-12 pb-12">
+            <div className="flex flex-col items-start xl:flex-row">
+              <div className="w-full xl:w-2/3">{children}</div>
+              <div className="w-full xl:w-1/3 ml-0 xl:ml-12 sticky xl:top-10 mt-5 xl:mt-0">
+                <Profile />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <Footer categories={categories} />
+        <Footer categories={categories} />
+      </body>
     </div>
   )
 }
