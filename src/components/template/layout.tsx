@@ -23,7 +23,7 @@ const Layout: NextPage<Props> = ({ children, categories, title, keyword }) => {
           content="Crea7 timeline. web/iOS application developer. This is my history. Follow @crea7_3tos for daily updates."
         ></meta>
       </Head>
-      <body className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen">
         <Header />
         <div className="bg-black text-white flex-1">
           <div className="m-auto w-12/12 sm:w-11/12 lg:w-9/12 xl:w-11/12 2xl:w-9/12 pt-0 sm:pt-12 pb-12">
@@ -36,7 +36,7 @@ const Layout: NextPage<Props> = ({ children, categories, title, keyword }) => {
           </div>
         </div>
         <Footer categories={categories} />
-      </body>
+      </div>
     </div>
   )
 }
