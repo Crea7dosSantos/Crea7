@@ -15,22 +15,20 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
     <React.Fragment key={history.id}>
       {/* left */}
       <div className="flex flex-row-reverse lg:contents">
-        <div className="col-start-1 col-end-5 rounded-xl my-4 lg:my-0 ml-auto shadow-md">
+        <div className="col-start-1 col-end-5 rounded-xl my-4 lg:my-0 ml-auto shadow-md cursor-pointer">
           <Link href={history.url}>
-            <a>
-              <div className="mb-1.5 flex items-center">
-                <img src={getHostIconFromURL(history.url)} width="14" height="14" alt="sns-icon" />
-                <p className="ml-2 text-base text-regal-light-gray">
-                  Posted on {hostname} / {formatDate(history.createdAt)}
-                </p>
-              </div>
-            </a>
+            <div className="mb-1.5 flex items-center">
+              <img src={getHostIconFromURL(history.url)} width="14" height="14" alt="sns-icon" />
+              <p className="ml-2 text-base text-regal-light-gray">
+                Posted on {hostname} / {formatDate(history.createdAt)}
+              </p>
+            </div>
           </Link>
           <Link href={history.url}>
             <a className="inline-block mb-1.5">
-              <h4 className="font-semibold text-lg xl:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-weight-gray">
+              <h2 className="font-semibold text-lg xl:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-weight-gray">
                 {history.title}
-              </h4>
+              </h2>
             </a>
           </Link>
           <div>
@@ -67,22 +65,20 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
             </a>
           </Link>
         </div>
-        <div className="col-start-6 col-end-10 rounded-xl my-4 lg:my-0 mr-auto shadow-md">
+        <div className="col-start-6 col-end-10 rounded-xl my-4 lg:my-0 mr-auto shadow-md cursor-pointer">
           <Link href={history.url}>
-            <a>
-              <div className="mb-1.5 flex items-center">
-                <img src={getHostIconFromURL(history.url)} width="14" height="14" alt="sns-icon" />
-                <p className="ml-2 text-base text-regal-light-gray">
-                  Posted on {hostname} / {formatDate(history.createdAt)}
-                </p>
-              </div>
-            </a>
+            <div className="mb-1.5 flex items-center">
+              <img src={getHostIconFromURL(history.url)} width="14" height="14" alt="sns-icon" />
+              <p className="ml-2 text-base text-regal-light-gray">
+                Posted on {hostname} / {formatDate(history.createdAt)}
+              </p>
+            </div>
           </Link>
           <Link href={history.url}>
             <a className="inline-block mb-1.5">
-              <h4 className="font-semibold text-lg xl:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-weight-gray">
+              <h2 className="font-semibold text-lg xl:text-2xl inline border-b hover:border-solid border-transparent hover:border-regal-weight-gray">
                 {history.title}
-              </h4>
+              </h2>
             </a>
           </Link>
           <div>
