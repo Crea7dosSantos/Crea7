@@ -13,7 +13,7 @@ const Timeline: NextPage<Props> = ({ histories }) => {
   return (
     <section>
       <Head>
-        <title>Crea7 timeline</title>
+        <title>Crea7 Timeline</title>
         <meta name="keyword" content="Crea7 timeline tech blog developer engineer"></meta>
         <meta
           name="description"
