@@ -59,6 +59,10 @@ html {
   @apply bg-indigo-50 p-1 font-semibold text-gray-600 rounded-lg;
 }
 
+.markdown blockquote {
+  font-size: 0.95rem;
+}
+
 .markdown pre {
   font-size: 0.8rem;
 }
