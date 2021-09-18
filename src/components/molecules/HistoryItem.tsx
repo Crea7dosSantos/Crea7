@@ -41,7 +41,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
         </div>
         <div className="col-start-5 col-end-6 lg:mx-auto relative mr-6">
           <Link href={history.url}>
-            <a>
+            <a aria-label={history.title}>
               <div className="h-full w-3 flex items-center justify-center">
                 <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
               </div>
@@ -57,7 +57,7 @@ export const HistoryItem: React.VFC<HistoryItemProps> = ({ history, position = '
       <div className="flex lg:contents">
         <div className="col-start-5 col-end-6 mr-6 lg:mx-auto relative">
           <Link href={history.url}>
-            <a>
+            <a aria-label={history.title}>
               <div className="h-full w-3 flex items-center justify-center">
                 <div className="h-full w-1 bg-regal-light-black pointer-events-none"></div>
               </div>
