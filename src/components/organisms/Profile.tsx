@@ -72,7 +72,7 @@ export const Profile: React.VFC = () => {
               <p className="ml-2">Zenn</p>
             </a>
             <a
-              href="mailto:cr26yusaku0720@icloud.com"
+              href="mailto:crea7dos3tos@gmail.com"
               className="flex-shrinkG inline-flex items-center hover:text-blue-100"
             >
               <EMailIcon width={16} height={16} />
