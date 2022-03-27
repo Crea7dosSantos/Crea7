@@ -19,7 +19,7 @@ const ArticlePage: NextPage<Props> = ({ article, articleId, categories }) => {
   return (
     <Layout
       categories={categories}
-      articleId={articleId}
+      url={`https://crea7dos3tos.com/articles/${articleId}`}
       title={article.title}
       keyword={categoriesByArticle.join(' ')}
       topImageUrl={article.topImage.url}
