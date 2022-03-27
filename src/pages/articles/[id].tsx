@@ -9,14 +9,21 @@ import { CategoryItem } from '../../components/molecules/CategoryItem'
 
 type Props = {
   article: Article
+  articleId: string
   categories: Category[]
 }
 
-const ArticlePage: NextPage<Props> = ({ article, categories }) => {
+const ArticlePage: NextPage<Props> = ({ article, articleId, categories }) => {
   const categoriesByArticle = article.categories.map((category) => category.name)
 
   return (
-    <Layout categories={categories} title={article.title} keyword={categoriesByArticle.join(' ')}>
+    <Layout
+      categories={categories}
+      url={`https://crea7dos3tos.com/articles/${articleId}`}
+      title={article.title}
+      keyword={categoriesByArticle.join(' ')}
+      topImageUrl={article.topImage.url}
+    >
       <div className="bg-white shadow-2xl sm:rounded-lg mb-6 tracking-wide">
         <div className="md:flex-shrink-0">
           <img
@@ -67,6 +74,7 @@ export const getStaticProps = async (contents) => {
   return {
     props: {
       article: article,
+      articleId: id,
       categories: categories.contents,
     },
   }

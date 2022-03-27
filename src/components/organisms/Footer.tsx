@@ -26,7 +26,7 @@ export const Footer: React.VFC<FooterProps> = ({ categories }) => {
         </div>
         <div className="mt-5 pt-5 border-t border-gray-600">
           <a
-            href="https://github.com/Crea7dosSantos"
+            href="https://github.com/Crea7dosSantos/Crea7"
             className="hover:text-white border-b hover:border-solid border-transparent hover:border-white"
           >
             SourceCode
