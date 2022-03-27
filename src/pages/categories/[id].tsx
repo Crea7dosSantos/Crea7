@@ -11,14 +11,17 @@ type Props = {
   histories: History[]
   categories: Category[]
   category: Category
+  categoryId: string
 }
 
-const CategoryPage: NextPage<Props> = ({ histories, categories, category }) => {
+const CategoryPage: NextPage<Props> = ({ histories, categories, category, categoryId }) => {
   return (
     <Layout
       categories={categories}
+      url={`https://crea7dos3tos.com/categories/${categoryId}`}
       title={`Crea7 histories by ${category.name}`}
       keyword={category.name}
+      topImageUrl="https://crea7-bucket.s3.ap-northeast-1.amazonaws.com/black.png"
     >
       <h1 className="mb-7 mt-10 sm:mt-0 text-3xl font-medium mx-5 sm:mx-0">{category.name}</h1>
       <div className="flex flex-col mx-5 sm:mx-0">
