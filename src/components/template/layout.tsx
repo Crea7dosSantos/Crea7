@@ -8,11 +8,20 @@ import { Footer } from '../../components/organisms/Footer'
 
 type Props = {
   categories: Category[]
+  articleId: string
   title: string
   keyword: string
+  topImageUrl: string
 }
 
-const Layout: NextPage<Props> = ({ children, categories, title, keyword }) => {
+const Layout: NextPage<Props> = ({
+  children,
+  categories,
+  articleId,
+  title,
+  keyword,
+  topImageUrl,
+}) => {
   return (
     <div>
       <Head>
@@ -22,6 +31,13 @@ const Layout: NextPage<Props> = ({ children, categories, title, keyword }) => {
           name="description"
           content="Crea7 timeline. web/iOS application developer. This is my history. Follow @crea7_3tos for daily updates."
         ></meta>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@crea7_3tos" />
+        <meta property="og:url" content={`https://crea7dos3tos.com/articles/${articleId}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={topImageUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:site_name" content="Crea7 Timeline" />
       </Head>
       <div className="flex flex-col min-h-screen">
         <Header />
