@@ -47,7 +47,7 @@ const ArticlePage: NextPage<Props> = ({ article, articleId, categories }) => {
             ))}
           </div>
           <div
-            className="prose prose-lg prose-xl markdown text-black pt-7"
+            className="prose prose-lg prose-xl prose-2xl markdown text-black pt-7"
             dangerouslySetInnerHTML={{ __html: `${article.body}` }}
           ></div>
         </div>
