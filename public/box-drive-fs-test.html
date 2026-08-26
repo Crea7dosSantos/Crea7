@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Box Drive File System Access API 検証</title>
+  <style>
+    :root { color-scheme: light; font-family: "Yu Gothic UI", "Meiryo", sans-serif; color: #202124; background: #f5f6f7; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { width: min(880px, calc(100% - 32px)); margin: 32px auto; padding: 28px; border: 1px solid #d5d9de; border-radius: 6px; background: #fff; }
+    h1 { margin: 0 0 8px; font-size: 24px; }
+    .lead { margin: 0 0 24px; color: #4b5563; }
+    h2 { margin: 28px 0 12px; font-size: 18px; }
+    .environment { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; border-top: 1px solid #d5d9de; border-left: 1px solid #d5d9de; }
+    .environment div { padding: 10px 12px; overflow-wrap: anywhere; border-right: 1px solid #d5d9de; border-bottom: 1px solid #d5d9de; }
+    dt { display: inline; font-weight: 700; }
+    dd { display: inline; margin: 0; }
+    .available { color: #137333; font-weight: 700; }
+    .unavailable { color: #b3261e; font-weight: 700; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    button { min-height: 42px; padding: 9px 14px; border: 1px solid #1557b0; border-radius: 4px; background: #1557b0; color: #fff; font: inherit; cursor: pointer; }
+    button:not(:first-child) { background: #fff; color: #1557b0; }
+    button:disabled { border-color: #9aa0a6; background: #e8eaed; color: #5f6368; cursor: wait; }
+    .result { min-height: 220px; margin: 0; padding: 16px; overflow: auto; border: 1px solid #9aa0a6; border-radius: 4px; background: #f8f9fa; color: #202124; font-family: "BIZ UDゴシック", "MS Gothic", monospace; font-size: 14px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+    @media (max-width: 640px) { main { margin: 16px auto; padding: 18px; } .environment { grid-template-columns: 1fr; } .actions { flex-direction: column; } button { width: 100%; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Box Drive File System Access API 検証</h1>
+    <p class="lead">選択したフォルダのtarget.htmlを読み取り、DirectoryHandleの保存状態を確認します。</p>
+    <h2>環境情報</h2>
+    <dl class="environment">
+      <div><dt>Secure Context: </dt><dd id="secure-context"></dd></div>
+      <div><dt>showDirectoryPicker: </dt><dd id="directory-picker"></dd></div>
+      <div><dt>IndexedDB: </dt><dd id="indexed-db"></dd></div>
+      <div><dt>User Agent: </dt><dd id="user-agent"></dd></div>
+    </dl>
+    <h2>検証操作</h2>
+    <div class="actions">
+      <button id="select-directory" type="button">Box Driveフォルダを選択</button>
+      <button id="read-target" type="button">target.htmlを読み込む</button>
+      <button id="check-saved" type="button">保存済みフォルダを確認</button>
+    </div>
+    <h2>検証結果</h2>
+    <pre id="result" class="result" aria-live="polite">未実行です。最初に「Box Driveフォルダを選択」を押してください。</pre>
+  </main>
+  <script>
+    'use strict';
+    const DB_NAME = 'BoxDriveTestDB';
+    const DB_VERSION = 1;
+    const STORE_NAME = 'handles';
+    const HANDLE_KEY = 'boxRoot';
+    const TARGET_FILE_NAME = 'target.html';
+    const CONTENT_PREVIEW_LENGTH = 2000;
+    const resultElement = document.querySelector('#result');
+    const actionButtons = [...document.querySelectorAll('.actions button')];
+    let directoryHandle = null;
+
+    function setAvailability(elementId, isAvailable) {
+      const element = document.querySelector(`#${elementId}`);
+      element.textContent = String(isAvailable);
+      element.className = isAvailable ? 'available' : 'unavailable';
+    }
+    function showResult(message) { resultElement.textContent = message; }
+    function formatError(action, error) {
+      const errorName = error instanceof Error || (error && error.name) ? error.name : 'UnknownError';
+      const errorMessage = error instanceof Error || (error && error.message) ? error.message : String(error);
+      return `[エラー] ${action}\nエラー名: ${errorName}\nメッセージ: ${errorMessage}`;
+    }
+    function reportError(action, error) { console.error(action, error); showResult(formatError(action, error)); }
+    async function runAction(progressMessage, action) {
+      actionButtons.forEach((button) => { button.disabled = true; });
+      showResult(progressMessage);
+      try { await action(); } finally { actionButtons.forEach((button) => { button.disabled = false; }); }
+    }
+    function openDatabase() {
+      return new Promise((resolve, reject) => {
+        if (!('indexedDB' in window)) { reject(new Error('IndexedDB is not available in this browser.')); return; }
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onupgradeneeded = () => {
+          const database = request.result;
+          if (!database.objectStoreNames.contains(STORE_NAME)) database.createObjectStore(STORE_NAME);
+        };
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error ?? new Error('Failed to open IndexedDB.'));
+        request.onblocked = () => reject(new Error('IndexedDB upgrade was blocked by another open page.'));
+      });
+    }
+    async function saveDirectoryHandle(handle) {
+      const database = await openDatabase();
+      try {
+        await new Promise((resolve, reject) => {
+          const transaction = database.transaction(STORE_NAME, 'readwrite');
+          transaction.objectStore(STORE_NAME).put(handle, HANDLE_KEY);
+          transaction.oncomplete = () => resolve();
+          transaction.onerror = () => reject(transaction.error ?? new Error('Failed to save the directory handle.'));
+          transaction.onabort = () => reject(transaction.error ?? new Error('Saving the directory handle was aborted.'));
+        });
+      } finally { database.close(); }
+    }
+    async function loadDirectoryHandle() {
+      const database = await openDatabase();
+      try {
+        return await new Promise((resolve, reject) => {
+          const transaction = database.transaction(STORE_NAME, 'readonly');
+          const request = transaction.objectStore(STORE_NAME).get(HANDLE_KEY);
+          request.onsuccess = () => resolve(request.result ?? null);
+          request.onerror = () => reject(request.error ?? new Error('Failed to load the directory handle.'));
+          transaction.onabort = () => reject(transaction.error ?? new Error('Loading the directory handle was aborted.'));
+        });
+      } finally { database.close(); }
+    }
+    async function getAvailableDirectoryHandle() {
+      if (directoryHandle) return directoryHandle;
+      directoryHandle = await loadDirectoryHandle();
+      if (!directoryHandle) throw new DOMException('保存済みフォルダがありません。先にフォルダを選択してください。', 'NotFoundError');
+      return directoryHandle;
+    }
+
+    document.querySelector('#select-directory').addEventListener('click', async () => {
+      if (typeof window.showDirectoryPicker !== 'function') { showResult('[利用不可] showDirectoryPickerがこの環境で利用できません。'); return; }
+      await runAction('フォルダ選択UIを開いています...', async () => {
+        try {
+          const selectedHandle = await window.showDirectoryPicker({ mode: 'read' });
+          await saveDirectoryHandle(selectedHandle);
+          directoryHandle = selectedHandle;
+          showResult('[成功] フォルダを選択し、DirectoryHandleをIndexedDBへ保存しました。\n' + `フォルダ名: ${selectedHandle.name}`);
+        } catch (error) {
+          if (error && error.name === 'AbortError') {
+            console.info('Directory selection was cancelled.', error);
+            showResult('[キャンセル] フォルダ選択がキャンセルされました。\n' + `エラー名: ${error.name}\nメッセージ: ${error.message}`);
+            return;
+          }
+          reportError('フォルダの選択またはDirectoryHandleの保存に失敗しました。', error);
+        }
+      });
+    });
+    document.querySelector('#read-target').addEventListener('click', async () => {
+      await runAction(`${TARGET_FILE_NAME}を読み込んでいます...`, async () => {
+        try {
+          const handle = await getAvailableDirectoryHandle();
+          const fileHandle = await handle.getFileHandle(TARGET_FILE_NAME);
+          const file = await fileHandle.getFile();
+          const content = await file.text();
+          const preview = content.slice(0, CONTENT_PREVIEW_LENGTH);
+          const truncatedNotice = content.length > CONTENT_PREVIEW_LENGTH ? `\n\n（先頭${CONTENT_PREVIEW_LENGTH}文字まで表示）` : '';
+          showResult(`[成功] ${TARGET_FILE_NAME}を読み取りました。\n` + `ファイル名: ${file.name}\n` + `ファイルサイズ: ${file.size.toLocaleString()} bytes\n` + `MIME Type: ${file.type || '(未設定)'}\n` + `lastModified: ${new Date(file.lastModified).toISOString()}\n\n` + `--- 内容（先頭${CONTENT_PREVIEW_LENGTH}文字まで） ---\n` + preview + truncatedNotice);
+        } catch (error) { reportError(`${TARGET_FILE_NAME}の読み取りに失敗しました。`, error); }
+      });
+    });
+    document.querySelector('#check-saved').addEventListener('click', async () => {
+      await runAction('IndexedDBから保存済みフォルダを確認しています...', async () => {
+        try {
+          const savedHandle = await loadDirectoryHandle();
+          if (!savedHandle) throw new DOMException('IndexedDBに保存済みのDirectoryHandleがありません。', 'NotFoundError');
+          directoryHandle = savedHandle;
+          const permission = await savedHandle.queryPermission({ mode: 'read' });
+          showResult('[成功] IndexedDBからDirectoryHandleを取得しました。\n' + `フォルダ名: ${savedHandle.name}\n` + `queryPermission({ mode: "read" }): ${permission}`);
+        } catch (error) { reportError('保存済みフォルダの確認に失敗しました。', error); }
+      });
+    });
+    setAvailability('secure-context', window.isSecureContext);
+    setAvailability('directory-picker', typeof window.showDirectoryPicker === 'function');
+    setAvailability('indexed-db', 'indexedDB' in window);
+    document.querySelector('#user-agent').textContent = navigator.userAgent;
+  </script>
+</body>
+</html>
